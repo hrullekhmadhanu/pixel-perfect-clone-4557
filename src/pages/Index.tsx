@@ -445,7 +445,10 @@ const Index = () => {
           near YSR Statue, Ayyappa Society, Mega Hills, Madhapur, 
           Hyderabad, Telangana 500081
         </p>
-        <p className="text-sm">Phone: +91 9550552194</p>
+        <p className="text-sm">
+  Phone: <a href="tel:+919550552194" className="hover:text-blue-300 transition-colors cursor-pointer">+91 9550552194</a>
+</p>
+
         <p className="text-sm">Email: ursdental@mavis.com</p>
         
         {/* Social Media Icons */}
