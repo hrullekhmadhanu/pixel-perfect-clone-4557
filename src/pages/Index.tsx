@@ -9,6 +9,27 @@ import dentalExam from '@/assets/dental-exam.jpg';
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      {/* Top Banner */}
+<div className="bg-green-100 py-3 px-6">
+  <div className="container mx-auto flex items-center justify-between">
+    <div className="text-green-800 text-sm">
+      We understand that each patient is unique
+    </div>
+    <div className="flex items-center space-x-6">
+      <div className="flex items-center space-x-2">
+        <Phone className="w-4 h-4 text-green-700" />
+        <a href="tel:+919550552194" className="text-green-700 text-sm font-medium hover:text-green-900 transition-colors">
+          +91 9550552194
+        </a>
+      </div>
+      <div className="flex items-center space-x-2">
+        <MapPin className="w-4 h-4 text-green-700" />
+        <span className="text-green-700 text-sm">Find Location</span>
+      </div>
+    </div>
+  </div>
+</div>
+
       {/* Header */}
       <header className="bg-background border-b border-border py-4 px-6">
         <div className="container mx-auto flex items-center justify-between">
@@ -521,6 +542,22 @@ const Index = () => {
     </div>
   </div>
 </footer>
+{/* Copyright Section */}
+<div className="bg-white py-4 px-6 border-t border-gray-200">
+  <div className="container mx-auto flex justify-between items-center">
+    <div className="text-gray-600 text-sm">
+      © URS Dental All Rights Reserved.
+    </div>
+    <div className="flex space-x-6">
+      <a href="/terms" className="text-gray-600 text-sm hover:text-primary transition-colors">
+        Terms & Conditions
+      </a>
+      <a href="/legal" className="text-gray-600 text-sm hover:text-primary transition-colors">
+        Legal Notice
+      </a>
+    </div>
+  </div>
+</div>
 
     </div>
   );
