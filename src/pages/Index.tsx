@@ -541,15 +541,13 @@ const Index = () => {
       <div className="space-y-4">
         <h3 className="text-white font-bold text-lg mb-6">Contact Us</h3>
         <p className="text-sm leading-relaxed">
-          Address: Flat No:302, Venkoti Building, Plot No:809, 60 Feet Rd, 
-          near YSR Statue, Ayyappa Society, Mega Hills, Madhapur, 
-          Hyderabad, Telangana 500081
+          314, Remedy Hospital Ln, MIG 1, Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072
         </p>
         <p className="text-sm">
-  Phone: <a href="tel:+919550552194" className="hover:text-blue-300 transition-colors cursor-pointer">+91 90143 87093</a>
+  Phone: <a href="tel:+91 90143 87093" className="hover:text-blue-300 transition-colors cursor-pointer">+91 90143 87093</a>
 </p>
 
-        <p className="text-sm">Email: ursdental@mavis.com</p>
+        <p className="text-sm">Email: info@smiledentist3.com</p>
         
         {/* Social Media Icons */}
         <div className="flex space-x-4 mt-6">
