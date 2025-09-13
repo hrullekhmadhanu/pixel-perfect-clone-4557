@@ -2,12 +2,20 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Star, Users, Phone, MapPin, Clock, Mail } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import dentalHero1 from '@/assets/dental-hero-1.jpg';
 import dentalAbout from '@/assets/dental-about.jpg';
 import dentalConsultation from '@/assets/dental-consultation.jpg';
 import dentalExam from '@/assets/dental-exam.jpg';
 
 const Index = () => {
+  const featuresAnimation = useScrollAnimation(0.2);
+  const aboutAnimation = useScrollAnimation(0.2);
+  const servicesAnimation = useScrollAnimation(0.2);
+  const consultationAnimation = useScrollAnimation(0.2);
+  const testimonialsAnimation = useScrollAnimation(0.2);
+  const ctaAnimation = useScrollAnimation(0.2);
+  
   return (
     <div className="min-h-screen bg-background">
       {/* Top Banner */}
@@ -139,10 +147,14 @@ const Index = () => {
 
 
       {/* Features Section */}
-      <section className="bg-secondary py-20 px-6 rounded-b-[70px]">
+      <section ref={featuresAnimation.ref} className={`bg-secondary py-20 px-6 rounded-b-[70px] transition-all duration-1000 ${
+        featuresAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+      }`}>
         <div className="container mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center text-secondary-foreground">
+            <div className={`text-center text-secondary-foreground transition-all duration-700 ${
+              featuresAnimation.isVisible ? 'animate-rise-up-delay-1' : 'opacity-0 translate-y-10'
+            }`}>
               <div className="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6">
                 <Phone className="w-8 h-8 text-primary" />
               </div>
@@ -151,7 +163,9 @@ const Index = () => {
                 Comprehensive dental care in our state-of-the-art clinic with advanced equipment
               </p>
             </div>
-            <div className="text-center text-secondary-foreground">
+            <div className={`text-center text-secondary-foreground transition-all duration-700 ${
+              featuresAnimation.isVisible ? 'animate-rise-up-delay-2' : 'opacity-0 translate-y-10'
+            }`}>
               <div className="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6">
                 <Star className="w-8 h-8 text-primary" />
               </div>
@@ -160,7 +174,9 @@ const Index = () => {
                 Latest dental technology ensuring precise, comfortable treatments for all patients
               </p>
             </div>
-            <div className="text-center text-secondary-foreground">
+            <div className={`text-center text-secondary-foreground transition-all duration-700 ${
+              featuresAnimation.isVisible ? 'animate-rise-up-delay-3' : 'opacity-0 translate-y-10'
+            }`}>
               <div className="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="w-8 h-8 text-primary" />
               </div>
@@ -174,7 +190,9 @@ const Index = () => {
       </section>
 
       {/* About Us Section */}
-      <section className="bg-background py-20 px-6">
+      <section ref={aboutAnimation.ref} className={`bg-background py-20 px-6 transition-all duration-1000 ${
+        aboutAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+      }`}>
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative">
@@ -184,9 +202,13 @@ const Index = () => {
                 className="rounded-2xl shadow-card w-full"
               />
             </div>
-            <div>
+            <div className={`transition-all duration-700 ${
+              aboutAnimation.isVisible ? 'animate-rise-up' : 'opacity-0 translate-y-10'
+            }`}>
               <span className="text-primary font-semibold">About Us</span>
-              <h2 className="text-4xl font-bold text-foreground mb-6">
+              <h2 className={`text-4xl font-bold text-foreground mb-6 transition-all duration-800 ${
+                aboutAnimation.isVisible ? 'animate-rise-up-delay-1' : 'opacity-0 translate-y-10'
+              }`}>
                 Discover Smile Dentist3: A Trusted Destination for Dental Excellence
               </h2>
               <p className="text-muted-foreground mb-8">
@@ -227,11 +249,17 @@ const Index = () => {
       </section>
 
      {/* Services Section */}
-<section className="bg-accent-pink py-16 px-2 rounded-b-[70px] md:px-4">
+<section ref={servicesAnimation.ref} className={`bg-accent-pink py-16 px-2 rounded-b-[70px] md:px-4 transition-all duration-1000 ${
+  servicesAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+}`}>
   <div className="max-w-6xl mx-auto">
-    <div className="text-center mb-10">
+    <div className={`text-center mb-10 transition-all duration-700 ${
+      servicesAnimation.isVisible ? 'animate-rise-up' : 'opacity-0 translate-y-10'
+    }`}>
       <span className="text-primary font-semibold block mb-1">Our Services</span>
-      <h2 className="text-3xl md:text-4xl font-bold text-accent-pink-foreground mb-3">
+      <h2 className={`text-3xl md:text-4xl font-bold text-accent-pink-foreground mb-3 transition-all duration-800 ${
+        servicesAnimation.isVisible ? 'animate-rise-up-delay-1' : 'opacity-0 translate-y-10'
+      }`}>
         Transform Your Smile with Comprehensive Dental Services
       </h2>
     </div>
@@ -334,12 +362,18 @@ const Index = () => {
 
       
 {/* Consultation Section */}
-      <section className="bg-gradient-to-br from-accent-purple to-accent-purple-light py-20 px-6">
+      <section ref={consultationAnimation.ref} className={`bg-gradient-to-br from-accent-purple to-accent-purple-light py-20 px-6 transition-all duration-1000 ${
+        consultationAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+      }`}>
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-accent-purple-foreground">
+            <div className={`text-accent-purple-foreground transition-all duration-700 ${
+              consultationAnimation.isVisible ? 'animate-rise-up' : 'opacity-0 translate-y-10'
+            }`}>
               <span className="text-accent-purple-foreground/80 font-semibold">Free Consultation</span>
-              <h2 className="text-4xl font-bold mb-6">
+              <h2 className={`text-4xl font-bold mb-6 transition-all duration-800 ${
+                consultationAnimation.isVisible ? 'animate-rise-up-delay-1' : 'opacity-0 translate-y-10'
+              }`}>
                 Book Your Free Consultation Today
               </h2>
               <p className="text-accent-purple-foreground/90 mb-8 text-lg">
@@ -360,11 +394,17 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-<section className="bg-background py-20 px-6">
+<section ref={testimonialsAnimation.ref} className={`bg-background py-20 px-6 transition-all duration-1000 ${
+  testimonialsAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+}`}>
   <div className="container mx-auto">
-    <div className="text-center mb-16">
+    <div className={`text-center mb-16 transition-all duration-700 ${
+      testimonialsAnimation.isVisible ? 'animate-rise-up' : 'opacity-0 translate-y-10'
+    }`}>
       <span className="text-primary font-semibold">Testimonials</span>
-      <h2 className="text-4xl font-bold text-foreground mb-6">
+      <h2 className={`text-4xl font-bold text-foreground mb-6 transition-all duration-800 ${
+        testimonialsAnimation.isVisible ? 'animate-rise-up-delay-1' : 'opacity-0 translate-y-10'
+      }`}>
         Experiences Shared by Our Customers
       </h2>
     </div>
@@ -419,7 +459,11 @@ const Index = () => {
           textColor: "text-pink-900"
         }
       ].map((testimonial, i) => (
-        <div key={i} className={`${testimonial.bgColor} rounded-2xl p-6 shadow-lg`}>
+        <div key={i} className={`${testimonial.bgColor} rounded-2xl p-6 shadow-lg transition-all duration-700 ${
+          testimonialsAnimation.isVisible 
+            ? `animate-rise-up-delay-${i % 3 + 1}` 
+            : 'opacity-0 translate-y-10'
+        }`}>
           <div className="flex items-center mb-4">
             <div className="flex">
               {[1, 2, 3, 4, 5].map((star) => (
@@ -453,15 +497,21 @@ const Index = () => {
 
       {/* CTA Section with rounded bottom corners and custom background */}
 <div style={{ backgroundColor: '#1B246B' }}>
-  <section className="bg-gradient-to-br from-accent-blue to-blue-600 py-20 px-6" 
+  <section ref={ctaAnimation.ref} className={`bg-gradient-to-br from-accent-blue to-blue-600 py-20 px-6 transition-all duration-1000 ${
+    ctaAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+  }`} 
            style={{ 
              borderBottomLeftRadius: '70px', 
              borderBottomRightRadius: '70px' 
            }}>
     <div className="container mx-auto">
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        <div className="text-accent-blue-foreground">
-          <h2 className="text-4xl font-bold mb-6">
+        <div className={`text-accent-blue-foreground transition-all duration-700 ${
+          ctaAnimation.isVisible ? 'animate-rise-up' : 'opacity-0 translate-y-10'
+        }`}>
+          <h2 className={`text-4xl font-bold mb-6 transition-all duration-800 ${
+            ctaAnimation.isVisible ? 'animate-rise-up-delay-1' : 'opacity-0 translate-y-10'
+          }`}>
             Schedule Your Dental Exam with Us!
           </h2>
           <p className="text-accent-blue-foreground/90 mb-8 text-lg">

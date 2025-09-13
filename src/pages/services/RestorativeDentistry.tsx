@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Wrench, CheckCircle } from 'lucide-react';
 import dentalConsultation from '@/assets/dental-consultation.jpg';
 
 const RestorativeDentistry = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
