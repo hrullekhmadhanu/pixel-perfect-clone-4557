@@ -263,7 +263,7 @@ const Index = () => {
 
 
       {/* Consultation Section */}
-      <section className="bg-gradient-to-br from-accent-purple to-accent-purple-light py-20 px-6">
+      <section className="bg-gradient-to-br from-accent-purple to-accent-purple-light py-20 px-6 -mt-12 relative z-0">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-accent-purple-foreground">
