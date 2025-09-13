@@ -380,30 +380,37 @@ const Index = () => {
   </div>
 </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-br from-accent-blue to-blue-600 py-20 px-6">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-accent-blue-foreground">
-              <h2 className="text-4xl font-bold mb-6">
-                Schedule Your Dental Exam with Us!
-              </h2>
-              <p className="text-accent-blue-foreground/90 mb-8 text-lg">
-                Don't wait to take care of your oral health. Book your appointment today 
-                and experience the difference of gentle, professional dental care.
-              </p>
-              <Button variant="cta" size="lg">Book Your Exam Now</Button>
-            </div>
-            <div className="relative">
-              <img 
-                src={dentalExam} 
-                alt="Dental examination" 
-                className="rounded-2xl shadow-card w-full"
-              />
-            </div>
-          </div>
+      {/* CTA Section with rounded bottom corners and custom background */}
+<div style={{ backgroundColor: '#1B246B' }}>
+  <section className="bg-gradient-to-br from-accent-blue to-blue-600 py-20 px-6" 
+           style={{ 
+             borderBottomLeftRadius: '70px', 
+             borderBottomRightRadius: '70px' 
+           }}>
+    <div className="container mx-auto">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="text-accent-blue-foreground">
+          <h2 className="text-4xl font-bold mb-6">
+            Schedule Your Dental Exam with Us!
+          </h2>
+          <p className="text-accent-blue-foreground/90 mb-8 text-lg">
+            Don't wait to take care of your oral health. Book your appointment today 
+            and experience the difference of gentle, professional dental care.
+          </p>
+          <Button variant="cta" size="lg">Book Your Exam Now</Button>
         </div>
-      </section>
+        <div className="relative">
+          <img 
+            src={dentalExam} 
+            alt="Dental examination" 
+            className="rounded-2xl shadow-card w-full"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
 
       {/* Footer */}
 <footer className="bg-[#1B246B] text-white py-16 px-6 rounded-b-[70px]">
