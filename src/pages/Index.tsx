@@ -139,7 +139,7 @@ const Index = () => {
 
 
       {/* Features Section */}
-      <section className="bg-secondary py-20 px-6">
+      <section className="bg-secondary py-20 px-6 rounded-b-[70px]">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center text-secondary-foreground">
