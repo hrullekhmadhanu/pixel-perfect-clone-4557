@@ -34,7 +34,7 @@ const Index = () => {
       {/* Header */}
       <header className="bg-background border-b border-border py-4 px-6">
         <div className="container mx-auto flex items-center justify-between">
-          <div className="text-2xl font-bold text-primary">URS Dental</div>
+          <div className="text-2xl font-bold text-primary">Smile Dentist3</div>
           <nav className="hidden md:flex space-x-8">
             <Link to="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
             <Link to="/about" className="text-foreground hover:text-primary transition-colors">About</Link>
@@ -187,10 +187,10 @@ const Index = () => {
             <div>
               <span className="text-primary font-semibold">About Us</span>
               <h2 className="text-4xl font-bold text-foreground mb-6">
-                Discover URS Dental: A Trusted Destination for Dental Excellence
+                Discover Smile Dentist3: A Trusted Destination for Dental Excellence
               </h2>
               <p className="text-muted-foreground mb-8">
-                At URS Dental, we combine years of experience with cutting-edge technology 
+                At Smile Dentist3, we combine years of experience with cutting-edge technology 
                 to provide exceptional dental care. Our team of skilled professionals is 
                 dedicated to ensuring your comfort and satisfaction.
               </p>
@@ -371,7 +371,7 @@ const Index = () => {
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {[
         {
-          text: "I recently visited URS Dental for dental treatment and had a very positive experience. The staff was incredibly professional and courteous, making me feel comfortable throughout the visit.",
+          text: "I recently visited Smile Dentist3 for dental treatment and had a very positive experience. The staff was incredibly professional and courteous, making me feel comfortable throughout the visit.",
           name: "Jessy Manohar",
           role: "Patient",
           avatar: "JM",
@@ -600,7 +600,7 @@ const Index = () => {
 <div className="bg-white py-4 px-6 border-t border-gray-200">
   <div className="container mx-auto flex justify-between items-center">
     <div className="text-gray-600 text-sm">
-      © URS Dental All Rights Reserved.
+      © Smile Dentist3 All Rights Reserved.
     </div>
     <div className="flex space-x-6">
       <a href="/terms" className="text-gray-600 text-sm hover:text-primary transition-colors">
