@@ -15,9 +15,29 @@ const Index = () => {
   const consultationAnimation = useScrollAnimation(0.2);
   const testimonialsAnimation = useScrollAnimation(0.2);
   const ctaAnimation = useScrollAnimation(0.2);
-  
+const marqueeStyle = `
+    .marquee-container {
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .marquee-content {
+      display: inline-flex;
+      align-items: center;
+      animation: marquee 25s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translate3d(100%, 0, 0); }
+      100% { transform: translate3d(-100%, 0, 0); }
+    }
+    @media (max-width: 640px) {
+      .marquee-content {
+        animation: marquee 15s linear infinite;
+      }
+    }
+  `;
   return (
     <div className="min-h-screen bg-background">
+      <style jsx>{marqueeStyle}</style>
       {/* Top Banner */}
 <div className="bg-green-100 py-3 px-6 overflow-hidden">
   <div className="marquee-container">
