@@ -227,115 +227,86 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-<section className="py-16 px-2 sm:px-4 rounded-b-[70px] overflow-hidden" style={{ backgroundColor: '#D789FE' }}>
-  <div className="max-w-5xl mx-auto">
-    <div className="text-center mb-10">
-      <span className="text-primary font-semibold block mb-1">Our Services</span>
-      <h2 className="text-3xl md:text-4xl font-bold text-accent-pink-foreground mb-3">
-        Transform Your Smile with Comprehensive Dental Services
-      </h2>
-    </div>
-    <div className="space-y-0 divide-y divide-accent-pink-foreground/10 rounded-b-[70px] overflow-hidden">
-      {[
-        {
-          title: "General Dentistry",
-          tags: ["Dental Cleanings", "Coloured Filing", "Tooth Extractions"],
-          link: "/services/general-dentistry",
-          image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?fit=crop&w=800&q=80",
-          id: "general"
-        },
-        {
-          title: "Preventive Dentistry",
-          tags: ["Fluoride Treatments", "Dental Sealants", "Oral Cancer Screenings"],
-          link: "/services/preventive-dentistry",
-          image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?fit=crop&w=800&q=80",
-          id: "preventive"
-        },
-        {
-          title: "Restorative Dentistry",
-          tags: ["Dental Crowns", "Dental Implants", "Root Canal"],
-          link: "/services/restorative-dentistry",
-          image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?fit=crop&w=800&q=80",
-          id: "restorative"
-        },
-        {
-          title: "Cosmetic Dentistry",
-          tags: ["Teeth Whitening", "Porcelain Veneers", "Smile Makeovers"],
-          link: "/services/cosmetic-dentistry",
-          image: "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?fit=crop&w=800&q=80",
-          id: "cosmetic"
-        },
-        {
-          title: "Periodontal Care",
-          tags: ["Scaling And Root Planing", "Periodontal Maintenance", "Gingival Grafting"],
-          link: "/services/periodontal-care",
-          image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?fit=crop&w=800&q=80",
-          id: "periodontal"
-        },
-      ].map((service, idx) => {
-        const [isClicked, setIsClicked] = useState(false);
-        
-        return (
+<section className="bg-[#D789FE] py-16 px-2 md:px-4 rounded-b-[70px]">
+  <div className="bg-accent-pink py-16 px-4 rounded-b-[70px] md:px-8">
+    <div className="max-w-3xl mx-auto">
+      <div className="text-center mb-10">
+        <span className="text-primary font-semibold block mb-1">Our Services</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-accent-pink-foreground mb-3">
+          Transform Your Smile with Comprehensive Dental Services
+        </h2>
+      </div>
+      <div className="space-y-0 divide-y divide-accent-pink-foreground/10 rounded-b-[70px] overflow-hidden">
+        {[
+          {
+            title: "General Dentistry",
+            tags: ["Dental Cleanings", "Coloured Filing", "Tooth Extractions"],
+            link: "/services/general-dentistry",
+            image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?fit=crop&w=800&q=80",
+          },
+          {
+            title: "Preventive Dentistry",
+            tags: ["Fluoride Treatments", "Dental Sealants", "Oral Cancer Screenings"],
+            link: "/services/preventive-dentistry",
+            image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?fit=crop&w=800&q=80",
+          },
+          {
+            title: "Restorative Dentistry",
+            tags: ["Dental Crowns", "Dental Implants", "Root Canal"],
+            link: "/services/restorative-dentistry",
+            image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?fit=crop&w=800&q=80",
+          },
+          {
+            title: "Cosmetic Dentistry",
+            tags: ["Teeth Whitening", "Porcelain Veneers", "Smile Makeovers"],
+            link: "/services/cosmetic-dentistry",
+            image: "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?fit=crop&w=800&q=80",
+          },
+          {
+            title: "Periodontal Care",
+            tags: ["Scaling And Root Planing", "Periodontal Maintenance", "Gingival Grafting"],
+            link: "/services/periodontal-care",
+            image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?fit=crop&w=800&q=80",
+          },
+        ].map((service, idx) => (
           <Link
             to={service.link}
             key={service.title}
-            className="group relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-3 sm:px-6 py-8 bg-transparent transition-all duration-300 hover:bg-transparent focus:outline-none"
+            className="group relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-4 sm:px-6 py-8 bg-transparent transition-all duration-300 hover:bg-transparent focus:outline-none active:bg-transparent"
             style={{ minHeight: "90px" }}
-            onClick={() => setIsClicked(!isClicked)}
           >
             {/* Overlay photo on hover and click */}
             <div
-              className={`absolute inset-0 z-0 transition-all duration-300 pointer-events-none rounded-2xl ${
-                isClicked 
-                  ? 'opacity-100 scale-100 brightness-90' 
-                  : 'opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:brightness-90'
-              }`}
+              className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 group-active:opacity-100 group-hover:scale-100 group-active:scale-100 group-hover:brightness-90 group-active:brightness-90 transition-all duration-300 pointer-events-none rounded-2xl"
               style={{
                 backgroundImage: `url(${service.image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
+                transition: 'opacity 0.3s, filter 0.3s',
               }}
               aria-hidden="true"
             ></div>
-            
             {/* Service Title and Tags */}
             <div className="relative z-10 flex-1">
-              <h3 className={`text-lg md:text-xl font-semibold mb-3 transition-colors duration-300 ${
-                isClicked 
-                  ? 'text-white' 
-                  : 'group-hover:text-white text-foreground'
-              }`}>
+              <h3 className="text-lg md:text-xl font-semibold mb-3 transition-colors duration-300 group-hover:text-white group-active:text-white text-foreground">
                 {service.title}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {service.tags.map(tag => (
                   <span
                     key={tag}
-                    className={`px-3 py-1 rounded-full border-2 text-primary text-xs md:text-sm font-medium backdrop-blur transition-all duration-300 ${
-                      isClicked 
-                        ? 'border-white/50 bg-white/20 text-white' 
-                        : 'border-accent-pink-foreground/40 bg-transparent group-hover:border-white/50 group-hover:bg-white/20 group-hover:text-white'
-                    }`}
+                    className="px-3 py-1 rounded-full border-2 border-primary/30 text-primary text-xs md:text-sm font-medium backdrop-blur group-hover:border-white/50 group-hover:text-white group-active:border-white/50 group-active:text-white transition-all duration-300"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
             </div>
-            
             {/* Right Arrow Button */}
             <div className="relative z-10 mt-6 sm:mt-0">
-              <span className={`flex items-center justify-center border-2 rounded-full w-12 h-12 transition-all duration-300 ${
-                isClicked 
-                  ? 'border-white bg-white/30' 
-                  : 'border-accent-pink-foreground group-hover:border-white group-hover:bg-white/30'
-              }`}>
+              <span className="flex items-center justify-center border-2 border-accent-pink-foreground group-hover:border-white group-active:border-white rounded-full w-12 h-12 transition-all duration-300 group-hover:bg-white/30 group-active:bg-white/30">
                 <svg
-                  className={`w-6 h-6 transition-all duration-300 ${
-                    isClicked 
-                      ? 'text-white' 
-                      : 'text-accent-pink-foreground group-hover:text-white'
-                  }`}
+                  className="w-6 h-6 text-accent-pink-foreground group-hover:text-white group-active:text-white transition-all duration-300"
                   fill="none" stroke="currentColor" strokeWidth="2"
                   viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round"
@@ -344,24 +315,24 @@ const Index = () => {
               </span>
             </div>
           </Link>
-        );
-      })}
-    </div>
-    
-    {/* View More Button */}
-    <div className="flex justify-center mt-10">
-      <button className="border-2 border-accent-pink-foreground/40 rounded-full px-8 py-3 text-base flex items-center gap-3 bg-transparent hover:bg-white/20 hover:border-white focus:outline-none transition-all duration-200 text-accent-pink-foreground hover:text-white">
-        View More Services
-        <svg className="w-5 h-5"
-             fill="none" stroke="currentColor" strokeWidth="2"
-             viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round"
-                d="M13 7l5 5m0 0l-5 5m5-5H6" />
-        </svg>
-      </button>
+        ))}
+      </div>
+      {/* View More Button */}
+      <div className="flex justify-center mt-10">
+        <button className="border-2 border-accent-pink-foreground rounded-full px-8 py-3 text-base flex items-center gap-3 bg-transparent hover:bg-white/20 focus:outline-none transition-all duration-200 text-accent-pink-foreground hover:text-white">
+          View More Services
+          <svg className="w-5 h-5"
+               fill="none" stroke="currentColor" strokeWidth="2"
+               viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </section>
+
 
 
 
