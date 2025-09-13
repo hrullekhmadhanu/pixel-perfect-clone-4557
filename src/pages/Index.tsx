@@ -332,7 +332,34 @@ const Index = () => {
     </div>
   </div>
 </section>
+      
+{/* Consultation Section */}
+      <section className="bg-gradient-to-br from-accent-purple to-accent-purple-light py-20 px-6">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-accent-purple-foreground">
+              <span className="text-accent-purple-foreground/80 font-semibold">Free Consultation</span>
+              <h2 className="text-4xl font-bold mb-6">
+                Book Your Free Consultation Today
+              </h2>
+              <p className="text-accent-purple-foreground/90 mb-8 text-lg">
+                Schedule a complimentary consultation with our experienced dental team. 
+                We'll assess your oral health and discuss the best treatment options for you.
+              </p>
+              <Button variant="consultation" size="lg">Schedule Consultation</Button>
+            </div>
+            <div className="relative">
+              <img 
+                src={dentalConsultation} 
+                alt="Dental consultation" 
+                className="rounded-2xl shadow-card w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
+      {/* Testimonials Section */}
 <section className="bg-background py-20 px-6">
   <div className="container mx-auto">
     <div className="text-center mb-16">
