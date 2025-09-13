@@ -227,8 +227,8 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-<section className="bg-[#D789FE] py-16 px-2 md:px-4 rounded-b-[70px]">
-  <div className="bg-accent-pink py-16 px-4 rounded-b-[70px] md:px-8">
+<section className="bg-[#D789FE] py-0 px-0">
+  <div className="bg-accent-pink py-16 px-4 rounded-b-[70px] md:px-8 mx-4">
     <div className="max-w-3xl mx-auto">
       <div className="text-center mb-10">
         <span className="text-primary font-semibold block mb-1">Our Services</span>
@@ -236,7 +236,7 @@ const Index = () => {
           Transform Your Smile with Comprehensive Dental Services
         </h2>
       </div>
-      <div className="space-y-0 divide-y divide-accent-pink-foreground/10 rounded-b-[70px] overflow-hidden">
+      <div className="space-y-0 divide-y divide-accent-pink-foreground/10 overflow-hidden">
         {[
           {
             title: "General Dentistry",
@@ -333,36 +333,6 @@ const Index = () => {
   </div>
 </section>
 
-
-
-
-      {/* Consultation Section */}
-      <section className="bg-gradient-to-br from-accent-purple to-accent-purple-light py-20 px-6">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-accent-purple-foreground">
-              <span className="text-accent-purple-foreground/80 font-semibold">Free Consultation</span>
-              <h2 className="text-4xl font-bold mb-6">
-                Book Your Free Consultation Today
-              </h2>
-              <p className="text-accent-purple-foreground/90 mb-8 text-lg">
-                Schedule a complimentary consultation with our experienced dental team. 
-                We'll assess your oral health and discuss the best treatment options for you.
-              </p>
-              <Button variant="consultation" size="lg">Schedule Consultation</Button>
-            </div>
-            <div className="relative">
-              <img 
-                src={dentalConsultation} 
-                alt="Dental consultation" 
-                className="rounded-2xl shadow-card w-full"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
 <section className="bg-background py-20 px-6">
   <div className="container mx-auto">
     <div className="text-center mb-16">
