@@ -406,7 +406,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-<footer className="bg-[#1B246B] text-white py-16 px-6 rounded-b-[50px]">
+<footer className="bg-[#1B246B] text-white py-16 px-6 rounded-b-[60px]">
   <div className="container mx-auto">
     <div className="grid md:grid-cols-4 gap-10">
       {/* Contact Us Column */}
