@@ -235,7 +235,7 @@ const PeriodontalCare = () => {
             <div>
               <h3 className="text-xl font-bold mb-6">Contact Us</h3>
               <div className="space-y-4">
-                <p>+91 90143 87093</p>
+                <p>+91 7207746777</p>
                 <p>info@smiledentist3.com</p>
                 <p>314, Remedy Hospital Ln, MIG 1, Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072</p>
               </div>
