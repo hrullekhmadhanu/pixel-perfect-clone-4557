@@ -45,8 +45,8 @@ const marqueeStyle = `
       <span className="text-green-800 text-sm mr-8">We understand that each patient is unique</span>
       <span className="flex items-center text-green-700 text-sm mr-8">
         <Phone className="w-4 h-4 mr-1" />
-        <a href="tel:+91 90143 87093" className="font-medium hover:text-green-900 transition-colors">
-          +91 90143 87093
+        <a href="tel:+91 7207746777" className="font-medium hover:text-green-900 transition-colors">
+          +91 7207746777
         </a>
       </span>
       <span className="flex items-center text-green-700 text-sm mr-8">
@@ -118,7 +118,7 @@ const marqueeStyle = `
     <div className="w-6 h-6 sm:w-8 sm:h-8 bg-purple-500 rounded-full flex items-center justify-center text-xs sm:text-base">
       📞
     </div>
-    <span className="font-semibold text-purple-800 text-sm sm:text-base">+91 90143 87093</span>
+    <span className="font-semibold text-purple-800 text-sm sm:text-base">+91 7207746777</span>
   </div>
 </div>
 
@@ -583,7 +583,7 @@ const marqueeStyle = `
           314, Remedy Hospital Ln, MIG 1, Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072
         </p>
         <p className="text-sm">
-  Phone: <a href="tel:+91 90143 87093" className="hover:text-blue-300 transition-colors cursor-pointer">+91 90143 87093</a>
+  Phone: <a href="tel:+91 7207746777" className="hover:text-blue-300 transition-colors cursor-pointer">+91 7207746777</a>
 </p>
 
         <p className="text-sm">Email: info@smiledentist3.com</p>
