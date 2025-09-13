@@ -13,7 +13,7 @@ const PreventiveDentistry = () => {
       {/* Header */}
       <header className="bg-background border-b border-border py-4 px-6">
         <div className="container mx-auto flex items-center justify-between">
-          <div className="text-2xl font-bold text-primary">URS Dental</div>
+          <div className="text-2xl font-bold text-primary">Smile Dentist3</div>
           <nav className="hidden md:flex space-x-8">
             <Link to="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
             <Link to="/about" className="text-foreground hover:text-primary transition-colors">About</Link>
