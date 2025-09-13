@@ -183,9 +183,9 @@ const RestorativeDentistry = () => {
             <div>
               <h3 className="text-xl font-bold mb-6">Contact Us</h3>
               <div className="space-y-4">
-                <p>(555) 123-4567</p>
-                <p>info@ursdental.com</p>
-                <p>123 Dental Street, City, ST 12345</p>
+                <p>+91 90143 87093</p>
+                <p>info@smiledentist3.com</p>
+                <p>314, Remedy Hospital Ln, MIG 1, Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072</p>
               </div>
             </div>
             <div>
