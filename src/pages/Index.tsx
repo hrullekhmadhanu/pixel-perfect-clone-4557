@@ -289,41 +289,96 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-background py-20 px-6">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-primary font-semibold">Testimonials</span>
-            <h2 className="text-4xl font-bold text-foreground mb-6">
-              Experiences Shared by Our Customers
-            </h2>
+<section className="bg-background py-20 px-6">
+  <div className="container mx-auto">
+    <div className="text-center mb-16">
+      <span className="text-primary font-semibold">Testimonials</span>
+      <h2 className="text-4xl font-bold text-foreground mb-6">
+        Experiences Shared by Our Customers
+      </h2>
+    </div>
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        {
+          text: "I recently visited URS Dental for dental treatment and had a very positive experience. The staff was incredibly professional and courteous, making me feel comfortable throughout the visit.",
+          name: "Jessy Manohar",
+          role: "Patient",
+          avatar: "JM",
+          bgColor: "bg-orange-200",
+          textColor: "text-orange-900"
+        },
+        {
+          text: "I recently got a dental crown, and I'm thoroughly impressed! The procedure was smooth, and the result is fantastic. My crown looks and feels like a natural tooth. It's comfortable, and I can eat and drink without worry.",
+          name: "Balaji Sharadha",
+          role: "Practitioner",
+          avatar: "BS",
+          bgColor: "bg-blue-200",
+          textColor: "text-blue-900"
+        },
+        {
+          text: "I've been bringing my kids to Mavis for years, and we've always had positive experiences.",
+          name: "John D.",
+          role: "Hart Patient",
+          avatar: "JD",
+          bgColor: "bg-purple-200",
+          textColor: "text-purple-900"
+        },
+        {
+          text: "I recently had a dental emergency and was in a lot of pain. Mavis got me in right away and provided prompt, effective treatment.",
+          name: "Mike L.",
+          role: "Physician",
+          avatar: "ML",
+          bgColor: "bg-yellow-200",
+          textColor: "text-yellow-900"
+        },
+        {
+          text: "I used to dread going to the dentist until I found Mavis. The team here is incredibly friendly and professional.",
+          name: "Emily W.",
+          role: "Eye Patient",
+          avatar: "EW",
+          bgColor: "bg-green-200",
+          textColor: "text-green-900"
+        },
+        {
+          text: "As someone with dental anxiety, finding a dentist I trust was challenging. Thankfully, I found Mavis.",
+          name: "Emma S.",
+          role: "Doctor",
+          avatar: "ES",
+          bgColor: "bg-pink-200",
+          textColor: "text-pink-900"
+        }
+      ].map((testimonial, i) => (
+        <div key={i} className={`${testimonial.bgColor} rounded-2xl p-6 shadow-lg`}>
+          <div className="flex items-center mb-4">
+            <div className="flex">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <Star key={star} className="w-5 h-5 fill-cyan-400 text-cyan-400" />
+              ))}
+            </div>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="bg-card rounded-2xl p-6 shadow-card">
-                <div className="flex items-center mb-4">
-                  <div className="flex">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-card-foreground mb-4">
-                  "Excellent dental care! The team is professional, gentle, and made me feel comfortable throughout my treatment."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 bg-primary-light rounded-full flex items-center justify-center mr-3">
-                    <span className="text-primary font-semibold">JD</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-card-foreground">John Doe</div>
-                    <div className="text-sm text-muted-foreground">Verified Patient</div>
-                  </div>
-                </div>
+          <p className={`${testimonial.textColor} mb-6 font-medium leading-relaxed`}>
+            {testimonial.text}
+          </p>
+          <div className="flex items-center">
+            <div className={`w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 shadow-md`}>
+              <span className={`${testimonial.textColor} font-bold text-lg`}>
+                {testimonial.avatar}
+              </span>
+            </div>
+            <div>
+              <div className={`font-bold ${testimonial.textColor} text-lg`}>
+                {testimonial.name}
               </div>
-            ))}
+              <div className={`text-sm ${testimonial.textColor} opacity-75`}>
+                {testimonial.role}
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* CTA Section */}
       <section className="bg-gradient-to-br from-accent-blue to-blue-600 py-20 px-6">
