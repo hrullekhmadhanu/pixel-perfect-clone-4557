@@ -90,17 +90,18 @@ const Index = () => {
         Professional dental care with a gentle touch. We provide comprehensive 
         dental services in a comfortable, modern environment.
       </p>
-      <div className="flex items-center gap-4 mb-8">
-        <Button className="bg-orange-200 hover:bg-orange-300 text-orange-800 px-6 py-3 rounded-full font-medium">
-          Get In Touch →
-        </Button>
-        <div className="flex items-center gap-2 bg-purple-200 px-4 py-3 rounded-full">
-          <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
-            📞
-          </div>
-          <span className="font-semibold text-purple-800">+91 90143 87093</span>
-        </div>
-      </div>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
+  <Button className="bg-orange-200 hover:bg-orange-300 text-orange-800 px-4 sm:px-6 py-3 rounded-full font-medium text-sm sm:text-base">
+    Get In Touch →
+  </Button>
+  <div className="flex items-center gap-2 bg-purple-200 px-3 sm:px-4 py-3 rounded-full">
+    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-purple-500 rounded-full flex items-center justify-center text-xs sm:text-base">
+      📞
+    </div>
+    <span className="font-semibold text-purple-800 text-sm sm:text-base">+91 90143 87093</span>
+  </div>
+</div>
+
       <div className="flex items-center gap-8">
         <div className="flex items-center gap-2">
           <Users className="w-5 h-5 text-primary" />
