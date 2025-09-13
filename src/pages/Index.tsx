@@ -27,8 +27,8 @@ const Index = () => {
     <div className="flex items-center space-x-6">
       <div className="flex items-center space-x-2">
         <Phone className="w-4 h-4 text-green-700" />
-        <a href="tel:+919550552194" className="text-green-700 text-sm font-medium hover:text-green-900 transition-colors">
-          +91 9550552194
+        <a href="tel:+91 90143 87093" className="text-green-700 text-sm font-medium hover:text-green-900 transition-colors">
+          +91 90143 87093
         </a>
       </div>
       <div className="flex items-center space-x-2">
@@ -80,7 +80,7 @@ const Index = () => {
           <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
             📞
           </div>
-          <span className="font-semibold text-purple-800">+91 9550552194</span>
+          <span className="font-semibold text-purple-800">+91 90143 87093</span>
         </div>
       </div>
       <div className="flex items-center gap-8">
@@ -546,7 +546,7 @@ const Index = () => {
           Hyderabad, Telangana 500081
         </p>
         <p className="text-sm">
-  Phone: <a href="tel:+919550552194" className="hover:text-blue-300 transition-colors cursor-pointer">+91 9550552194</a>
+  Phone: <a href="tel:+919550552194" className="hover:text-blue-300 transition-colors cursor-pointer">+91 90143 87093</a>
 </p>
 
         <p className="text-sm">Email: ursdental@mavis.com</p>
