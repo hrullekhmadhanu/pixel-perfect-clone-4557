@@ -157,82 +157,110 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="bg-accent-pink py-20 px-6">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-primary font-semibold">Our Services</span>
-            <h2 className="text-4xl font-bold text-accent-pink-foreground mb-6">
-              Transform Your Smile with Comprehensive Dental Services
-            </h2>
+<section className="bg-accent-pink py-16 px-4 rounded-b-[48px] md:px-8 lg:px-0">
+  <div className="max-w-4xl mx-auto">
+    <div className="text-center mb-10">
+      <span className="text-primary font-semibold block mb-1">Our Services</span>
+      <h2 className="text-3xl md:text-4xl font-bold text-accent-pink-foreground mb-3">
+        Transform Your Smile with Comprehensive Dental Services
+      </h2>
+    </div>
+    <div className="space-y-0 divide-y divide-accent-pink-foreground/10 rounded-b-[48px] overflow-hidden">
+      {[
+        {
+          title: "General Dentistry",
+          tags: ["Dental Cleanings", "Coloured Filing", "Tooth Extractions"],
+          link: "/services/general-dentistry",
+          image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?fit=crop&w=800&q=80",
+        },
+        {
+          title: "Preventive Dentistry",
+          tags: ["Fluoride Treatments", "Dental Sealants", "Oral Cancer Screenings"],
+          link: "/services/preventive-dentistry",
+          image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?fit=crop&w=800&q=80",
+        },
+        {
+          title: "Restorative Dentistry",
+          tags: ["Dental Crowns", "Dental Implants", "Root Canal"],
+          link: "/services/restorative-dentistry",
+          image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?fit=crop&w=800&q=80",
+        },
+        {
+          title: "Cosmetic Dentistry",
+          tags: ["Teeth Whitening", "Porcelain Veneers", "Smile Makeovers"],
+          link: "/services/cosmetic-dentistry",
+          image: "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?fit=crop&w=800&q=80",
+        },
+        {
+          title: "Periodontal Care",
+          tags: ["Scaling And Root Planing", "Periodontal Maintenance", "Gingival Grafting"],
+          link: "/services/periodontal-care",
+          image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?fit=crop&w=800&q=80",
+        },
+      ].map((service, idx) => (
+        <Link
+          to={service.link}
+          key={service.title}
+          className="group relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-4 sm:px-8 py-8 bg-transparent transition-all duration-300 hover:bg-transparent focus:outline-none"
+          style={{ minHeight: "90px" }}
+        >
+          {/* Overlay photo on hover */}
+          <div
+            className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:brightness-90 transition-all duration-300 pointer-events-none rounded-2xl"
+            style={{
+              backgroundImage: `url(${service.image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              transition: 'opacity 0.3s, filter 0.3s',
+            }}
+            aria-hidden="true"
+          ></div>
+          {/* Service Title and Tags */}
+          <div className="relative z-10 flex-1">
+            <h3 className="text-lg md:text-xl font-semibold mb-3 transition-colors duration-300 group-hover:text-white text-foreground">
+              {service.title}
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {service.tags.map(tag => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 rounded-full bg-white/80 text-primary text-xs md:text-sm font-medium backdrop-blur group-hover:bg-white/30 group-hover:text-white transition-all duration-300"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* General Dentistry */}
-            <Link to="/services/general-dentistry" className="group">
-              <div className="bg-background rounded-2xl p-8 shadow-card hover:shadow-lg transition-all duration-300 h-full">
-                <div className="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Phone className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">General Dentistry</h3>
-                <p className="text-muted-foreground">
-                  Comprehensive dental care including checkups, cleanings, and preventive treatments for optimal oral health.
-                </p>
-              </div>
-            </Link>
-
-            {/* Preventive Dentistry */}
-            <Link to="/services/preventive-dentistry" className="group">
-              <div className="bg-background rounded-2xl p-8 shadow-card hover:shadow-lg transition-all duration-300 h-full">
-                <div className="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Star className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">Preventive Dentistry</h3>
-                <p className="text-muted-foreground">
-                  Proactive care to prevent dental issues before they start, including cleanings and fluoride treatments.
-                </p>
-              </div>
-            </Link>
-
-            {/* Restorative Dentistry */}
-            <Link to="/services/restorative-dentistry" className="group">
-              <div className="bg-background rounded-2xl p-8 shadow-card hover:shadow-lg transition-all duration-300 h-full">
-                <div className="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Users className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">Restorative Dentistry</h3>
-                <p className="text-muted-foreground">
-                  Restore damaged teeth with crowns, bridges, fillings, and other advanced restorative procedures.
-                </p>
-              </div>
-            </Link>
-
-            {/* Cosmetic Dentistry */}
-            <Link to="/services/cosmetic-dentistry" className="group">
-              <div className="bg-background rounded-2xl p-8 shadow-card hover:shadow-lg transition-all duration-300 h-full">
-                <div className="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Star className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">Cosmetic Dentistry</h3>
-                <p className="text-muted-foreground">
-                  Enhance your smile with veneers, teeth whitening, and other cosmetic treatments.
-                </p>
-              </div>
-            </Link>
-
-            {/* Periodontal Care */}
-            <Link to="/services/periodontal-care" className="group">
-              <div className="bg-background rounded-2xl p-8 shadow-card hover:shadow-lg transition-all duration-300 h-full">
-                <div className="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Phone className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">Periodontal Care</h3>
-                <p className="text-muted-foreground">
-                  Specialized treatment for gum disease and maintenance of healthy gums and supporting structures.
-                </p>
-              </div>
-            </Link>
+          {/* Right Arrow Button */}
+          <div className="relative z-10 mt-6 sm:mt-0">
+            <span className="flex items-center justify-center border-2 border-accent-pink-foreground group-hover:border-white rounded-full w-12 h-12 transition-all duration-300 group-hover:bg-white/30">
+              <svg
+                className="w-6 h-6 text-accent-pink-foreground group-hover:text-white transition-all duration-300"
+                fill="none" stroke="currentColor" strokeWidth="2"
+                viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round"
+                      d="M9 5l7 7-7 7"/>
+              </svg>
+            </span>
           </div>
-        </div>
-      </section>
+        </Link>
+      ))}
+    </div>
+    {/* View More Button */}
+    <div className="flex justify-center mt-10">
+      <button className="border rounded-full px-8 py-3 text-base flex items-center gap-3 bg-white/80 hover:bg-white focus:outline-none transition-all duration-200 text-accent-pink-foreground">
+        View More Services
+        <svg className="w-5 h-5"
+             fill="none" stroke="currentColor" strokeWidth="2"
+             viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round"
+                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
 
       {/* Consultation Section */}
       <section className="bg-gradient-to-br from-accent-purple to-accent-purple-light py-20 px-6">
