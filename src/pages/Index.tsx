@@ -628,9 +628,8 @@ const marqueeStyle = `
           314, Remedy Hospital Ln, MIG 1, Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072
         </p>
         <p className="text-sm">
-  Phone: <a href="tel:+91 7207746777" className="hover:text-blue-300 transition-colors cursor-pointer">+91 7207746777</a>
-</p>
-
+          Phone: <a href="tel:+91 7207746777" className="hover:text-blue-300 transition-colors cursor-pointer">+91 7207746777</a>
+        </p>
         <p className="text-sm">Email: info@smiledentist3.com</p>
         
         {/* Social Media Icons */}
@@ -658,13 +657,11 @@ const marqueeStyle = `
         </div>
         
         <a href="https://maps.app.goo.gl/3on61Ejxm3LrpS5U8?g_st=iw" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-medium text-sm transition-colors">
-  Get Directions 
-  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-  </svg>
-</a>
-
-
+          Get Directions 
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
       </div>
 
       {/* Services Column */}
@@ -699,21 +696,19 @@ const marqueeStyle = `
       <div className="bg-[#E2F0D9] p-6 rounded-2xl text-[#1B246B]">
         <h3 className="text-2xl font-bold mb-6 text-[#1B246B]">Working Hours</h3>
         <div className="space-y-4">
-          <div className="flex justify-between items-center border-b border-[#B8D4A8] pb-3">
-            <span className="font-semibold text-sm">Mon - Wed</span>
-            <span className="text-sm">8:00 AM - 7:00 PM</span>
+          <div className="flex justify-between items-center border-b border-[#B8D4A8] pb-4">
+            <span className="font-semibold text-base">Monday - Sunday</span>
+            <span className="text-base font-medium">10:00 AM - 8:00 PM</span>
           </div>
-          <div className="flex justify-between items-center border-b border-[#B8D4A8] pb-3">
-            <span className="font-semibold text-sm">Thu</span>
-            <span className="text-sm">8:00 AM - 5:00 PM</span>
-          </div>
-          <div className="flex justify-between items-center border-b border-[#B8D4A8] pb-3">
-            <span className="font-semibold text-sm">Fri</span>
-            <span className="text-sm">8:00 AM - 5:00 PM</span>
-          </div>
-          <div className="flex justify-between items-center mb-6">
-            <span className="font-semibold text-sm">Sat - Sun</span>
-            <span className="text-sm">8:00 AM - 4:00 PM</span>
+          
+          <div className="bg-white/50 p-4 rounded-lg mt-6 mb-6">
+            <div className="flex items-center gap-2 text-[#1B246B]">
+              <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span className="text-sm font-medium">Open All Week</span>
+            </div>
+            <p className="text-xs text-gray-600 mt-1">Same convenient hours every day</p>
           </div>
           
           <BookingForm 
@@ -733,6 +728,7 @@ const marqueeStyle = `
     </div>
   </div>
 </footer>
+
 {/* Copyright Section */}
 <div className="bg-white py-4 px-6 border-t border-gray-200">
   <div className="container mx-auto flex justify-between items-center">
