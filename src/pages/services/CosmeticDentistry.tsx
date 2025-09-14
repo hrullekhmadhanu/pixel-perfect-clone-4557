@@ -201,17 +201,14 @@ const CosmeticDentistry = () => {
               <h3 className="text-xl font-bold mb-6">Working Hours</h3>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span>Mon - Fri:</span>
-                  <span>8:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday:</span>
-                  <span>9:00 AM - 4:00 PM</span>
+                  <span>Mon - Sat:</span>
+                  <span>11:00 AM - 8:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Sunday:</span>
-                  <span>Closed</span>
+                  <span>12:00 AM - 7:00 PM</span>
                 </div>
+                
               </div>
             </div>
           </div>
