@@ -443,7 +443,6 @@ const marqueeStyle = `
   }`}
   style={{ borderBottomLeftRadius: '70px', borderBottomRightRadius: '70px' }}
 >
-
   <div className="container mx-auto">
     <div className="grid md:grid-cols-2 gap-12 items-center">
       <div className="text-white">
@@ -462,15 +461,21 @@ const marqueeStyle = `
         />
       </div>
       <div className="relative">
-        <img 
-          src={dentalConsultation} 
-          alt="Dental consultation" 
-          className="rounded-2xl shadow-card w-full"
-        />
+        <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-card">
+          <iframe 
+            src="https://player.cloudinary.com/embed/?cloud_name=dhxm8opah&public_id=6630950-sd_640_338_25fps_1_lw12np&profile=cld-default&autoplay=true&muted=true&loop=true&controls=false"
+            className="absolute inset-0 w-full h-full object-cover"
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            title="Dental consultation video"
+          />
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
       {/* Testimonials Section */}
