@@ -9,12 +9,12 @@ import dentalConsultation from '@/assets/dental-consultation.jpg';
 import dentalExam from '@/assets/dental-exam.jpg';
 
 const Index = () => {
-  const featuresAnimation = useScrollAnimation(0.2);
-  const aboutAnimation = useScrollAnimation(0.2);
-  const servicesAnimation = useScrollAnimation(0.2);
-  const consultationAnimation = useScrollAnimation(0.2);
-  const testimonialsAnimation = useScrollAnimation(0.2);
-  const ctaAnimation = useScrollAnimation(0.2);
+  const featuresAnimation = useScrollAnimation();
+  const aboutAnimation = useScrollAnimation();
+  const servicesAnimation = useScrollAnimation();
+  const consultationAnimation = useScrollAnimation();
+  const testimonialsAnimation = useScrollAnimation();
+  const ctaAnimation = useScrollAnimation();
 const marqueeStyle = `
     .marquee-container {
       white-space: nowrap;
@@ -37,7 +37,7 @@ const marqueeStyle = `
   `;
   return (
     <div className="min-h-screen bg-background">
-      <style jsx>{marqueeStyle}</style>
+      <style>{marqueeStyle}</style>
       {/* Top Banner */}
 <div className="bg-green-100 py-3 px-6 overflow-hidden">
   <div className="marquee-container">
@@ -57,7 +57,7 @@ const marqueeStyle = `
   </div>
 </div>
 
-<style jsx>{`
+<style>{`
   .marquee-container {
     white-space: nowrap;
     overflow: hidden;
