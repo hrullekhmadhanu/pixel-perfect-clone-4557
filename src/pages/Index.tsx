@@ -696,9 +696,13 @@ const marqueeStyle = `
       <div className="bg-[#E2F0D9] p-6 rounded-2xl text-[#1B246B]">
         <h3 className="text-2xl font-bold mb-6 text-[#1B246B]">Working Hours</h3>
         <div className="space-y-4">
-          <div className="flex justify-between items-center border-b border-[#B8D4A8] pb-4">
-            <span className="font-semibold text-base">Monday - Sunday</span>
-            <span className="text-base font-medium">10:00 AM - 8:00 PM</span>
+          <div className="flex justify-between items-center border-b border-[#B8D4A8] pb-3">
+            <span className="font-semibold text-sm">Monday - Saturday</span>
+            <span className="text-sm font-medium">11:00 AM - 8:00 PM</span>
+          </div>
+          <div className="flex justify-between items-center border-b border-[#B8D4A8] pb-3">
+            <span className="font-semibold text-sm">Sunday</span>
+            <span className="text-sm font-medium">12:00 PM - 7:00 PM</span>
           </div>
           
           <div className="bg-white/50 p-4 rounded-lg mt-6 mb-6">
@@ -708,7 +712,7 @@ const marqueeStyle = `
               </svg>
               <span className="text-sm font-medium">Open All Week</span>
             </div>
-            <p className="text-xs text-gray-600 mt-1">Same convenient hours every day</p>
+            <p className="text-xs text-gray-600 mt-1">Extended hours Monday through Saturday</p>
           </div>
           
           <BookingForm 
@@ -728,6 +732,7 @@ const marqueeStyle = `
     </div>
   </div>
 </footer>
+
 
 {/* Copyright Section */}
 <div className="bg-white py-4 px-6 border-t border-gray-200">
