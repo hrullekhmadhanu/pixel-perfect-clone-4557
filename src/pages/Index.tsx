@@ -113,7 +113,7 @@ const marqueeStyle = `
 
 
       {/* Hero Section */}
-<section className="bg-orange-50 py-12 md:py-20 px-3 md:px-6">
+<section className="bg-orange-50 py-12 md:py-20 px-1 md:px-6">
   <div className="container mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
     <div>
       <div className="mb-4">
