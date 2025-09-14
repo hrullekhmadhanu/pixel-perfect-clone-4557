@@ -413,9 +413,14 @@ const marqueeStyle = `
 
       
 {/* Consultation Section */}
-<section ref={consultationAnimation.ref} className={`bg-gradient-to-t from-violet-900 to-violet-700 py-20 px-6 transition-all duration-1000 ${
-  consultationAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
-}`}>
+<section 
+  ref={consultationAnimation.ref} 
+  className={`bg-gradient-to-t from-violet-900 to-violet-700 py-20 px-6 transition-all duration-1000 ${
+    consultationAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+  }`}
+  style={{ borderBottomLeftRadius: '70px', borderBottomRightRadius: '70px' }}
+>
+
   <div className="container mx-auto">
     <div className="grid md:grid-cols-2 gap-12 items-center">
       <div className={`text-white transition-all duration-700 ${
