@@ -75,20 +75,31 @@ const marqueeStyle = `
 
 
       {/* Header */}
-<header className="bg-background border-b border-border py-4 px-4 md:px-6">
+<header className="bg-background border-b border-border py-4 px-2 md:px-6">
   <div className="container mx-auto flex items-center justify-between">
-    <div className="text-xl md:text-2xl font-bold text-primary">Smile Dentist3</div>
+    {/* Logo with minimal padding on mobile */}
+    <div className="flex items-center">
+      <img
+        src="/logos.svg"
+        alt="Smile Dentist3 Logo"
+        className="h-8 md:h-10 w-auto"
+      />
+    </div>
     <nav className="hidden md:flex space-x-8">
       <Link to="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
       <Link to="/about" className="text-foreground hover:text-primary transition-colors">About</Link>
       <Link to="/services" className="text-foreground hover:text-primary transition-colors">Services</Link>
       <Link to="/contact" className="text-foreground hover:text-primary transition-colors">Contact</Link>
     </nav>
-    <Button variant="primary" className="text-xs md:text-sm px-3 py-2 md:px-4 md:py-2">
+    <Button 
+      variant="primary" 
+      className="text-xs md:text-sm px-2 md:px-4 py-2"
+    >
       Book Appointment
     </Button>
   </div>
 </header>
+
 
 
       {/* Hero Section */}
