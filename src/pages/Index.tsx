@@ -401,36 +401,37 @@ const marqueeStyle = `
 
       
 {/* Consultation Section */}
-      <section ref={consultationAnimation.ref} className={`bg-gradient-to-br from-accent-purple to-accent-purple-light py-20 px-6 transition-all duration-1000 ${
-        consultationAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+<section ref={consultationAnimation.ref} className={`bg-gradient-to-t from-violet-900 to-violet-700 py-20 px-6 transition-all duration-1000 ${
+  consultationAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+}`}>
+  <div className="container mx-auto">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className={`text-white transition-all duration-700 ${
+        consultationAnimation.isVisible ? 'animate-rise-up' : 'opacity-0 translate-y-10'
       }`}>
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className={`text-accent-purple-foreground transition-all duration-700 ${
-              consultationAnimation.isVisible ? 'animate-rise-up' : 'opacity-0 translate-y-10'
-            }`}>
-              <span className="text-accent-purple-foreground/80 font-semibold">Free Consultation</span>
-              <h2 className={`text-4xl font-bold mb-6 transition-all duration-800 ${
-                consultationAnimation.isVisible ? 'animate-rise-up-delay-1' : 'opacity-0 translate-y-10'
-              }`}>
-                Book Your Free Consultation Today
-              </h2>
-              <p className="text-accent-purple-foreground/90 mb-8 text-lg">
-                Schedule a complimentary consultation with our experienced dental team. 
-                We'll assess your oral health and discuss the best treatment options for you.
-              </p>
-              <Button variant="consultation" size="lg">Schedule Consultation</Button>
-            </div>
-            <div className="relative">
-              <img 
-                src={dentalConsultation} 
-                alt="Dental consultation" 
-                className="rounded-2xl shadow-card w-full"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+        <span className="text-white/80 font-semibold">Free Consultation</span>
+        <h2 className={`text-4xl font-bold mb-6 transition-all duration-800 ${
+          consultationAnimation.isVisible ? 'animate-rise-up-delay-1' : 'opacity-0 translate-y-10'
+        }`}>
+          Book Your Free Consultation Today
+        </h2>
+        <p className="text-white/90 mb-8 text-lg">
+          Schedule a complimentary consultation with our experienced dental team. 
+          We'll assess your oral health and discuss the best treatment options for you.
+        </p>
+        <Button variant="consultation" size="lg">Schedule Consultation</Button>
+      </div>
+      <div className="relative">
+        <img 
+          src={dentalConsultation} 
+          alt="Dental consultation" 
+          className="rounded-2xl shadow-card w-full"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Testimonials Section */}
 <section ref={testimonialsAnimation.ref} className={`bg-background py-20 px-6 transition-all duration-1000 ${
