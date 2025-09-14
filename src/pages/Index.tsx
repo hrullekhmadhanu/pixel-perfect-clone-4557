@@ -68,10 +68,20 @@ const marqueeStyle = `
     animation: marquee 20s linear infinite;
   }
   @keyframes marquee {
-    0% { transform: translate3d(100%, 0, 0); }
+    0% { transform: translate3d(40%, 0, 0); }
     100% { transform: translate3d(-100%, 0, 0); }
   }
+  @media (max-width: 640px) {
+    .marquee-content {
+      animation: marquee 15s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translate3d(30%, 0, 0); }
+      100% { transform: translate3d(-100%, 0, 0); }
+    }
+  }
 `}</style>
+
 
 
       {/* Header */}
