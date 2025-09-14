@@ -434,7 +434,7 @@ const marqueeStyle = `
   style={{ borderBottomLeftRadius: '70px', borderBottomRightRadius: '70px' }}
 >
 
-  <div className="container mx-auto">
+  <div className="container mx-auto animate-none">
     <div className="grid md:grid-cols-2 gap-12 items-center">
       <div className={`text-white transition-all duration-700 ${
         consultationAnimation.isVisible ? 'animate-rise-up' : 'opacity-0 translate-y-10'
