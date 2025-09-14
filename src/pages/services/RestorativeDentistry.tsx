@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Wrench, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Wrench, CheckCircle, MapPin, Clock, Mail } from 'lucide-react';
+import BookingForm from '@/components/BookingForm';
+import ServiceHeader from '@/components/ServiceHeader';
+import ServiceFooter from '@/components/ServiceFooter';
 import dentalConsultation from '@/assets/dental-consultation.jpg';
 
 const RestorativeDentistry = () => {
@@ -10,19 +13,7 @@ const RestorativeDentistry = () => {
   }, []);
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-background border-b border-border py-4 px-6">
-        <div className="container mx-auto flex items-center justify-between">
-          <div className="text-2xl font-bold text-primary">Smile Dentist3</div>
-          <nav className="hidden md:flex space-x-8">
-            <Link to="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
-            <Link to="/about" className="text-foreground hover:text-primary transition-colors">About</Link>
-            <Link to="/services" className="text-foreground hover:text-primary transition-colors">Services</Link>
-            <Link to="/contact" className="text-foreground hover:text-primary transition-colors">Contact</Link>
-          </nav>
-          <Button variant="primary">Book Appointment</Button>
-        </div>
-      </header>
+      <ServiceHeader />
 
       {/* Breadcrumb */}
       <div className="bg-muted py-4 px-6">

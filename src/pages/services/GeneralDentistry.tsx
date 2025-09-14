@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Phone, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Phone, CheckCircle, MapPin, Clock, Mail } from 'lucide-react';
+import BookingForm from '@/components/BookingForm';
+import ServiceHeader from '@/components/ServiceHeader';
+import ServiceFooter from '@/components/ServiceFooter';
 import dentalHero1 from '@/assets/dental-hero-1.jpg';
 
 const GeneralDentistry = () => {
@@ -10,19 +13,7 @@ const GeneralDentistry = () => {
   }, []);
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-background border-b border-border py-4 px-6">
-        <div className="container mx-auto flex items-center justify-between">
-          <div className="text-2xl font-bold text-primary">Smile Dentist3</div>
-          <nav className="hidden md:flex space-x-8">
-            <Link to="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
-            <Link to="/about" className="text-foreground hover:text-primary transition-colors">About</Link>
-            <Link to="/services" className="text-foreground hover:text-primary transition-colors">Services</Link>
-            <Link to="/contact" className="text-foreground hover:text-primary transition-colors">Contact</Link>
-          </nav>
-          <Button variant="primary">Book Appointment</Button>
-        </div>
-      </header>
+      <ServiceHeader />
 
       {/* Breadcrumb */}
       <div className="bg-muted py-4 px-6">
@@ -48,7 +39,11 @@ const GeneralDentistry = () => {
               Comprehensive dental care for the whole family. Our general dentistry services 
               focus on preventing oral health problems and maintaining your smile.
             </p>
-            <Button variant="hero" size="lg">Schedule Consultation</Button>
+            <BookingForm 
+              trigger={
+                <Button variant="hero" size="lg">Schedule Consultation</Button>
+              }
+            />
           </div>
         </div>
       </section>
@@ -165,9 +160,13 @@ const GeneralDentistry = () => {
             dental checkup today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="consultation" size="lg">Book Appointment</Button>
+            <BookingForm 
+              trigger={
+                <Button variant="consultation" size="lg">Book Appointment</Button>
+              }
+            />
             <Link to="/">
-              <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button variant="outline" size="lg" className="border-primary-foreground text-black hover:bg-primary-foreground hover:text-primary">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Home
               </Button>
@@ -176,56 +175,7 @@ const GeneralDentistry = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-secondary text-secondary-foreground py-16 px-6">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-6">Contact Us</h3>
-              <div className="space-y-4">
-                <p>+91 7207746777</p>
-                <p>info@smiledentist3.com</p>
-                <p>314, Remedy Hospital Ln, MIG 1, Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072</p>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-6">Services</h3>
-              <div className="space-y-3">
-                <Link to="/services/general-dentistry" className="block hover:text-primary transition-colors">General Dentistry</Link>
-                <Link to="/services/preventive-dentistry" className="block hover:text-primary transition-colors">Preventive Care</Link>
-                <Link to="/services/cosmetic-dentistry" className="block hover:text-primary transition-colors">Cosmetic Dentistry</Link>
-                <Link to="/services/restorative-dentistry" className="block hover:text-primary transition-colors">Restorative Care</Link>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-6">Quick Links</h3>
-              <div className="space-y-3">
-                <Link to="/" className="block hover:text-primary transition-colors">Home</Link>
-                <Link to="/about" className="block hover:text-primary transition-colors">About Us</Link>
-                <Link to="/services" className="block hover:text-primary transition-colors">Services</Link>
-                <Link to="/contact" className="block hover:text-primary transition-colors">Contact</Link>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-6">Working Hours</h3>
-              <div className="space-y-3">
-                <div className="flex justify-between">
-                  <span>Mon - Fri:</span>
-                  <span>8:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday:</span>
-                  <span>9:00 AM - 4:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sunday:</span>
-                  <span>Closed</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <ServiceFooter />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Star, Users, Phone, MapPin, Clock, Mail } from 'lucide-react';
+import BookingForm from '@/components/BookingForm';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import dentalHero1 from '@/assets/dental-hero-1.jpg';
 import dentalAbout from '@/assets/dental-about.jpg';
@@ -101,12 +102,16 @@ const marqueeStyle = `
       <Link to="/services" className="text-foreground hover:text-primary transition-colors">Services</Link>
       <Link to="/contact" className="text-foreground hover:text-primary transition-colors">Contact</Link>
     </nav>
-    <Button 
-      variant="primary" 
-      className="text-xs md:text-sm px-2 md:px-4 py-2"
-    >
-      Book Appointment
-    </Button>
+    <BookingForm 
+      trigger={
+        <Button 
+          variant="primary" 
+          className="text-xs md:text-sm px-2 md:px-4 py-2"
+        >
+          Book Appointment
+        </Button>
+      }
+    />
   </div>
 </header>
 
@@ -132,9 +137,14 @@ const marqueeStyle = `
         dental services in a comfortable, modern environment.
       </p>
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6 md:mb-8">
-        <Button className="bg-orange-200 hover:bg-orange-300 text-orange-800 px-4 sm:px-6 py-3 rounded-full font-medium text-sm sm:text-base">
+        <a 
+          href="https://maps.app.goo.gl/3on61Ejxm3LrpS5U8?g_st=iw" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="bg-orange-200 hover:bg-orange-300 text-orange-800 px-4 sm:px-6 py-3 rounded-full font-medium text-sm sm:text-base inline-flex items-center gap-2 transition-colors"
+        >
           Get In Touch →
-        </Button>
+        </a>
         <a 
           href="tel:+917207746777" 
           className="flex items-center gap-2 bg-purple-200 hover:bg-purple-300 px-3 sm:px-4 py-3 rounded-full transition-colors cursor-pointer"
@@ -210,7 +220,7 @@ const marqueeStyle = `
 
 
       {/* Features Section */}
-      <section ref={featuresAnimation.ref} className={`bg-secondary py-20 px-6 rounded-b-[70px] transition-all duration-1000 ${
+      <section ref={featuresAnimation.ref} className={`bg-secondary py-12 md:py-20 px-1 md:px-6 rounded-b-[70px] transition-all duration-1000 ${
         featuresAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
       }`}>
         <div className="container mx-auto">
@@ -253,7 +263,7 @@ const marqueeStyle = `
       </section>
 
       {/* About Us Section */}
-      <section ref={aboutAnimation.ref} className={`bg-background py-20 px-6 transition-all duration-1000 ${
+      <section ref={aboutAnimation.ref} className={`bg-background py-12 md:py-20 px-1 md:px-6 transition-all duration-1000 ${
         aboutAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
       }`}>
         <div className="container mx-auto">
@@ -312,7 +322,7 @@ const marqueeStyle = `
       </section>
 <div className="bg-violet-700">
      {/* Services Section */}
-<section ref={servicesAnimation.ref} className={`bg-accent-pink py-16 px-2 rounded-b-[70px] md:px-4 transition-all duration-1000 ${
+<section ref={servicesAnimation.ref} className={`bg-accent-pink py-12 md:py-20 px-1 md:px-6 rounded-b-[70px] transition-all duration-1000 ${
   servicesAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
 }`}>
   <div className="max-w-6xl mx-auto">
@@ -428,28 +438,28 @@ const marqueeStyle = `
 {/* Consultation Section */}
 <section 
   ref={consultationAnimation.ref} 
-  className={`bg-gradient-to-t from-violet-900 to-violet-700 py-20 px-6 transition-all duration-1000 ${
+  className={`bg-gradient-to-t from-violet-900 to-violet-700 py-12 md:py-20 px-1 md:px-6 transition-all duration-1000 ${
     consultationAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
   }`}
   style={{ borderBottomLeftRadius: '70px', borderBottomRightRadius: '70px' }}
 >
 
-  <div className="container mx-auto animate-none">
+  <div className="container mx-auto">
     <div className="grid md:grid-cols-2 gap-12 items-center">
-      <div className={`text-white transition-all duration-700 ${
-        consultationAnimation.isVisible ? 'animate-rise-up' : 'opacity-0 translate-y-10'
-      }`}>
+      <div className="text-white">
         <span className="text-white/80 font-semibold">Free Consultation</span>
-        <h2 className={`text-4xl font-bold mb-6 transition-all duration-800 ${
-          consultationAnimation.isVisible ? 'animate-rise-up-delay-1' : 'opacity-0 translate-y-10'
-        }`}>
+        <h2 className="text-4xl font-bold mb-6">
           Book Your Free Consultation Today
         </h2>
         <p className="text-white/90 mb-8 text-lg">
           Schedule a complimentary consultation with our experienced dental team. 
           We'll assess your oral health and discuss the best treatment options for you.
         </p>
-        <Button variant="consultation" size="lg">Schedule Consultation</Button>
+        <BookingForm 
+          trigger={
+            <Button variant="consultation" size="lg">Schedule Consultation</Button>
+          }
+        />
       </div>
       <div className="relative">
         <img 
@@ -464,7 +474,7 @@ const marqueeStyle = `
 
 
       {/* Testimonials Section */}
-<section ref={testimonialsAnimation.ref} className={`bg-background py-20 px-6 transition-all duration-1000 ${
+<section ref={testimonialsAnimation.ref} className={`bg-background py-12 md:py-20 px-1 md:px-6 transition-all duration-1000 ${
   testimonialsAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
 }`}>
   <div className="container mx-auto">
@@ -567,7 +577,7 @@ const marqueeStyle = `
 
       {/* CTA Section with rounded bottom corners and custom background */}
 <div style={{ backgroundColor: '#1B246B' }}>
-  <section ref={ctaAnimation.ref} className={`bg-gradient-to-br from-accent-blue to-blue-600 py-20 px-6 transition-all duration-1000 ${
+  <section ref={ctaAnimation.ref} className={`bg-gradient-to-br from-accent-blue to-blue-600 py-12 md:py-20 px-1 md:px-6 transition-all duration-1000 ${
     ctaAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
   }`} 
            style={{ 
@@ -588,7 +598,11 @@ const marqueeStyle = `
             Don't wait to take care of your oral health. Book your appointment today 
             and experience the difference of gentle, professional dental care.
           </p>
-          <Button variant="cta" size="lg">Book Your Exam Now</Button>
+          <BookingForm 
+            trigger={
+              <Button variant="cta" size="lg">Book Your Exam Now</Button>
+            }
+          />
         </div>
         <div className="relative">
           <img 
@@ -702,14 +716,18 @@ const marqueeStyle = `
             <span className="text-sm">8:00 AM - 4:00 PM</span>
           </div>
           
-          <button className="w-full bg-[#1B246B] hover:bg-[#0f1a5c] text-white px-6 py-4 rounded-full font-semibold flex items-center justify-center gap-3 transition-colors text-sm">
-            Book A Visit 
-            <div className="w-8 h-8 bg-[#0f1a5c] rounded-full flex items-center justify-center">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </div>
-          </button>
+          <BookingForm 
+            trigger={
+              <button className="w-full bg-[#1B246B] hover:bg-[#0f1a5c] text-white px-6 py-4 rounded-full font-semibold flex items-center justify-center gap-3 transition-colors text-sm">
+                Book A Visit 
+                <div className="w-8 h-8 bg-[#0f1a5c] rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </button>
+            }
+          />
         </div>
       </div>
     </div>
