@@ -286,7 +286,7 @@ const marqueeStyle = `
           </div>
         </div>
       </section>
-<div className="bg-violet-700 px-4 py-8">
+<div className="bg-violet-700">
      {/* Services Section */}
 <section ref={servicesAnimation.ref} className={`bg-accent-pink py-16 px-2 rounded-b-[70px] md:px-4 transition-all duration-1000 ${
   servicesAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
