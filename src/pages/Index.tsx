@@ -85,7 +85,7 @@ const marqueeStyle = `
 
 
       {/* Header */}
-<header className="bg-background border-b border-border py-4 px-2 md:px-6">
+<header className="bg-background border-b border-border py-4 px-0 md:px-6">
   <div className="container mx-auto flex items-center justify-between">
     {/* Logo with minimal padding on mobile */}
     <div className="flex items-center">
