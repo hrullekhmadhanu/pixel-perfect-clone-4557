@@ -643,12 +643,13 @@ const marqueeStyle = `
           </a>
         </div>
         
-        <a href="https://maps.app.goo.gl/3on61Ejxm3LrpS5U8?g_st=iw" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 mt-4 inline-flex items-center gap-2 text-sm transition-colors">
+        <a href="https://maps.app.goo.gl/3on61Ejxm3LrpS5U8?g_st=iw" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-medium text-sm transition-colors">
   Get Directions 
   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
   </svg>
 </a>
+
 
       </div>
 
