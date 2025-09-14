@@ -210,10 +210,11 @@ const PeriodontalCare = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="consultation" size="lg">Book Gum Health Evaluation</Button>
             <Link to="/">
-              <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Home
-              </Button>
+              <Button variant="outline" size="lg" className="border-primary-foreground text-black hover:bg-primary-foreground hover:text-primary">
+  <ArrowLeft className="w-4 h-4 mr-2" />
+  Back to Home
+</Button>
+
             </Link>
           </div>
         </div>
