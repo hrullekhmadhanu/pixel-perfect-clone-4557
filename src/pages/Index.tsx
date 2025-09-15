@@ -349,31 +349,31 @@ const marqueeStyle = `
           title: "General Dentistry",
           tags: ["Dental Cleanings", "Coloured Filing", "Tooth Extractions"],
           link: "/services/general-dentistry",
-          image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?fit=crop&w=800&q=80",
+          image: "/gd.webp",
         },
         {
           title: "Preventive Dentistry",
           tags: ["Fluoride Treatments", "Dental Sealants", "Oral Cancer Screenings"],
           link: "/services/preventive-dentistry",
-          image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?fit=crop&w=800&q=80",
+          image: "/prd.webp",
         },
         {
           title: "Restorative Dentistry",
           tags: ["Dental Crowns", "Dental Implants", "Root Canal"],
           link: "/services/restorative-dentistry",
-          image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?fit=crop&w=800&q=80",
+          image: "/rd.webp",
         },
         {
           title: "Cosmetic Dentistry",
           tags: ["Teeth Whitening", "Porcelain Veneers", "Smile Makeovers"],
           link: "/services/cosmetic-dentistry",
-          image: "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?fit=crop&w=800&q=80",
+          image: "/cd.webp",
         },
         {
           title: "Periodontal Care",
           tags: ["Scaling And Root Planing", "Periodontal Maintenance", "Gingival Grafting"],
           link: "/services/periodontal-care",
-          image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?fit=crop&w=800&q=80",
+          image: "/pec.webp",
         },
       ].map((service, idx) => (
         <Link
