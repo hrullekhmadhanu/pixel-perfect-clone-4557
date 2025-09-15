@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Star, Users, Phone, MapPin, Clock, Mail } from 'lucide-react';
 import BookingForm from '@/components/BookingForm';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useMobileServiceVisibility } from '@/hooks/useMobileServiceVisibility';
 import dentalHero1 from '@/assets/dental-hero-1.jpg';
 import dentalAbout from '@/assets/dental-about.jpg';
 import dentalConsultation from '@/assets/dental-consultation.jpg';
@@ -16,6 +17,20 @@ const Index = () => {
   const consultationAnimation = useScrollAnimation();
   const testimonialsAnimation = useScrollAnimation();
   const ctaAnimation = useScrollAnimation();
+  
+  // Mobile service visibility hook
+  const { serviceRefs, visibleService, isMobile } = useMobileServiceVisibility(5);
+  
+  // Helper function to scroll to section
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
 const marqueeStyle = `
     .marquee-container {
       white-space: nowrap;
@@ -98,9 +113,24 @@ const marqueeStyle = `
     </div>
     <nav className="hidden md:flex space-x-8">
       <Link to="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
-      <Link to="/about" className="text-foreground hover:text-primary transition-colors">About</Link>
-      <Link to="/services" className="text-foreground hover:text-primary transition-colors">Services</Link>
-      <Link to="/contact" className="text-foreground hover:text-primary transition-colors">Contact</Link>
+      <button 
+        onClick={() => scrollToSection('about-us')}
+        className="text-foreground hover:text-primary transition-colors"
+      >
+        About
+      </button>
+      <button 
+        onClick={() => scrollToSection('services')}
+        className="text-foreground hover:text-primary transition-colors"
+      >
+        Services
+      </button>
+      <button 
+        onClick={() => scrollToSection('footer')}
+        className="text-foreground hover:text-primary transition-colors"
+      >
+        Contact
+      </button>
     </nav>
     <BookingForm 
       trigger={
@@ -263,7 +293,7 @@ const marqueeStyle = `
       </section>
 
       {/* About Us Section */}
-      <section ref={aboutAnimation.ref} className={`bg-background py-12 md:py-20 px-1 md:px-6 transition-all duration-1000 ${
+      <section id="about-us" ref={aboutAnimation.ref} className={`bg-background py-12 md:py-20 px-1 md:px-6 transition-all duration-1000 ${
         aboutAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
       }`}>
         <div className="container mx-auto">
@@ -322,7 +352,7 @@ const marqueeStyle = `
       </section>
 <div className="bg-violet-700">
      {/* Services Section */}
-<section ref={servicesAnimation.ref} className={`py-12 md:py-20 px-1 md:px-6 rounded-b-[70px] transition-all duration-1000 ${
+<section id="services" ref={servicesAnimation.ref} className={`py-12 md:py-20 px-1 md:px-6 rounded-b-[70px] transition-all duration-1000 ${
   servicesAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
 }`} style={{ backgroundColor: '#FFF7ED' }}>
 
@@ -379,37 +409,43 @@ const marqueeStyle = `
         <Link
           to={service.link}
           key={service.title}
+          ref={serviceRefs[idx]}
           className="group relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 px-4 sm:px-8 py-10 bg-transparent transition-all duration-300 hover:bg-transparent focus:outline-none active:bg-transparent"
           style={{ minHeight: "120px" }}
         >
-          {/* Overlay photo on hover and click */}
+          {/* Overlay photo - Desktop hover, Mobile scroll-based */}
           <div
-            className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 group-active:opacity-100 group-hover:scale-100 group-active:scale-100 group-hover:brightness-90 group-active:brightness-90 transition-all duration-300 pointer-events-none rounded-2xl"
+            className={`absolute inset-0 z-0 transition-all duration-500 pointer-events-none rounded-2xl ${
+              isMobile 
+                ? (visibleService === idx ? 'opacity-100 scale-100' : 'opacity-0 scale-95')
+                : 'opacity-0 group-hover:opacity-100 group-active:opacity-100 group-hover:scale-100 group-active:scale-100 group-hover:brightness-90 group-active:brightness-90'
+            }`}
             style={{
               backgroundImage: `url(${service.image})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              transition: 'opacity 0.3s, filter 0.3s',
+              filter: isMobile && visibleService === idx ? 'brightness(0.9)' : undefined,
             }}
             aria-hidden="true"
           ></div>
           {/* Service Title and Tags */}
           <div className="relative z-10 flex-1">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-4 transition-colors duration-300 group-hover:text-white group-active:text-white text-foreground">
+            <h3 className={`text-2xl md:text-3xl font-semibold mb-4 transition-colors duration-500 text-foreground ${
+              isMobile && visibleService === idx 
+                ? 'text-white' 
+                : 'group-hover:text-white group-active:text-white'
+            }`}>
               {service.title}
             </h3>
-            <div className="flex flex-wrap gap-3">
-              {service.tags.map(tag => (
+            <div className="flex flex-wrap gap-2 mb-4">
+              {service.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-4 py-2 rounded-full border text-xs md:text-sm font-normal backdrop-blur group-hover:!text-white group-hover:!border-white/50 group-active:!text-white group-active:!border-white/50 transition-all duration-300"
-style={{
-  color: '#87344e',
-  borderColor: '#87344e',
-  fontSize: '10px'
-}}
-
-
+                  className={`px-3 py-1 bg-primary/10 text-primary rounded-full text-sm transition-colors duration-500 ${
+                    isMobile && visibleService === idx
+                      ? 'bg-white/20 text-white'
+                      : 'group-hover:bg-white/20 group-hover:text-white group-active:bg-white/20 group-active:text-white'
+                  }`}
                 >
                   {tag}
                 </span>
@@ -418,15 +454,15 @@ style={{
           </div>
           {/* Right Arrow Button */}
           <div className="relative z-10 mt-8 sm:mt-0">
-            <span className="flex items-center justify-center border-2 border-accent-pink-foreground group-hover:border-white group-active:border-white rounded-full w-14 h-14 transition-all duration-300 group-hover:bg-white/30 group-active:bg-white/30">
-              <svg
-                className="w-7 h-7 text-accent-pink-foreground group-hover:text-white group-active:text-white transition-all duration-300"
-                fill="none" stroke="currentColor" strokeWidth="2"
-                viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round"
-                      d="M9 5l7 7-7 7"/>
+            <div className={`w-8 h-8 flex items-center justify-center rounded-full border-2 border-primary text-primary transition-colors duration-500 ${
+              isMobile && visibleService === idx
+                ? 'border-white text-white'
+                : 'group-hover:border-white group-hover:text-white group-active:border-white group-active:text-white'
+            }`}>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </span>
+            </div>
           </div>
         </Link>
       ))}
@@ -638,7 +674,7 @@ style={{
 
 
       {/* Footer */}
-<footer className="bg-[#1B246B] text-white py-16 px-6 rounded-b-[70px]">
+<footer id="footer" className="bg-[#1B246B] text-white py-16 px-6 rounded-t-[70px] rounded-b-[70px]">
   <div className="container mx-auto">
     <div className="grid md:grid-cols-4 gap-10">
       {/* Contact Us Column */}
