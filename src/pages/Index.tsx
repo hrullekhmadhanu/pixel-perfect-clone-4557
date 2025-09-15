@@ -322,9 +322,10 @@ const marqueeStyle = `
       </section>
 <div className="bg-violet-700">
      {/* Services Section */}
-<section ref={servicesAnimation.ref} className={`bg-accent-pink/80 py-12 md:py-20 px-1 md:px-6 rounded-b-[70px] transition-all duration-1000 ${
+<section ref={servicesAnimation.ref} className={`py-12 md:py-20 px-1 md:px-6 rounded-b-[70px] transition-all duration-1000 ${
   servicesAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
-}`}>
+}`} style={{ backgroundColor: '#FFF7ED' }}>
+
   <div className="max-w-6xl mx-auto">
     <div className={`text-center mb-16 transition-all duration-700 ${
       servicesAnimation.isVisible ? 'animate-rise-up' : 'opacity-0 translate-y-10'
