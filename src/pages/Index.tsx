@@ -547,83 +547,110 @@ const marqueeStyle = `
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {[
         {
-  text: "I recently visited Smile Dentist3 for dental treatment and had a very positive experience. The staff was incredibly professional and courteous, making me feel comfortable throughout the visit.",
-  name: "Priya Reddy",
-  avatar: "PR",
+  text: "I am having scales on my teeth and two small cavities so i visited this clinic for the treatement. I am so satisfied with their service and I recommend everyone who is suffering with any dental related issues to visit this clinic. Their hospitality is very good. The clinic is also very neat and clean. The two doctors are so kind with the patients. And finally coming to the cost they are charging very very resonable rates compared with other clinics.Thanks to smile dental care for making my teeth clean.",
+  name: "Kande Saiteja",
+  avatar: "KS",
   bgColor: "bg-orange-200",
   textColor: "text-orange-900"
 },
 {
-  text: "I recently got a dental crown, and I'm thoroughly impressed! The procedure was smooth, and the result is fantastic. My crown looks and feels like a natural tooth. It's comfortable, and I can eat and drink without worry.",
-  name: "Rajesh Kumar",
-  avatar: "RK",
+  text: "I had a great experience at this clinic. The staff is very respectful and treats patients with genuine care. Everything was explained clearly, which made me feel comfortable and informed throughout the visit. The clinic is also very clean and well-maintained. Highly recommended!",
+  name: "Parupalli Madhuri",
+  avatar: "PM",
   bgColor: "bg-blue-200",
   textColor: "text-blue-900"
 },
 {
-  text: "I've been bringing my children to this dental clinic for years, and we've always had excellent experiences. The doctors are very patient with kids and make them feel at ease.",
-  name: "Deepika Rao",
-  avatar: "DR",
+  text: "My visit to Smile dentist3 with Dr.sowjanya was outstanding. From the moment I walked in, the staff made me feel comfortable. The hospital was exceptionally clean, which is crucial in a healthcare setting. Dr.sowjanya expertise and care during the consultation and procedure were remarkable. I'm extremely satisfied with the top-notch service I received. This dental hospital is a gem, and I wholeheartedly recommend it to anyone in need of dental care.",
+  name: "Durga Prasad",
+  avatar: "DP",
   bgColor: "bg-purple-200",
   textColor: "text-purple-900"
 },
 {
-  text: "I recently had a dental emergency and was in severe pain. The clinic accommodated me immediately and provided prompt, effective treatment. I'm very grateful for their quick response.",
-  name: "Mohammed Ahmed",
-  avatar: "MA",
+  text: "I visited the clinic for a root canal after days of unbearable pain, honestly, I was scared but dr Sowjanya made me feel east.the treatment was smooth and surprisingly painfree. I'm happy with the result and grateful for the care and mainly the treatment was at very affordable range.",
+  name: "Tagor",
+  avatar: "T",
   bgColor: "bg-yellow-200",
   textColor: "text-yellow-900"
 },
 {
-  text: "I used to be very nervous about dental visits until I found this clinic. The team here is incredibly friendly and professional, making every visit comfortable and stress-free.",
-  name: "Midhuna Reddy",
+  text: "My visit to smiling dentist was excellent. The entire team was welcoming and made sure I felt at ease. The dentist was thorough, explained each step clearly, and answered all my concerns. The clinic itself is very clean and has up-to-date equipment. I'd definitely recommend this place for anyone needing reliable and professional dental care.",
+  name: "Mamatha Modem",
   avatar: "MR",
   bgColor: "bg-green-200",
   textColor: "text-green-900"
 },
 {
-  text: "As someone with dental anxiety, finding a trustworthy dentist was very difficult. Thankfully, I found this wonderful clinic where the doctors understand my concerns and treat me with great care.",
-  name: "Arjun Prasad",
-  avatar: "AP",
+  text: "The staff is very friendly and will interact with whatever subject you are interested in. I enjoy going and feel very comfortable going. They do a fabulous job cleaning your teeth and are very organized while doing so. The staff remembers previous stories and things you have told them from your last visit with them. I would highly recommend Dr. Salman/Dr.sowjanya😊and I do not think you will regret your decision if you go too.",
+  name: "Mohd Azam",
+  avatar: "MA",
   bgColor: "bg-pink-200",
   textColor: "text-pink-900"
 }
-      ].map((testimonial, i) => (
-        <div key={i} className={`${testimonial.bgColor} rounded-2xl p-6 shadow-lg transition-all duration-700 ${
-          testimonialsAnimation.isVisible 
-            ? `animate-rise-up-delay-${i % 3 + 1}` 
-            : 'opacity-0 translate-y-10'
-        }`}>
-          <div className="flex items-center mb-4">
-            <div className="flex">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="w-5 h-5 fill-cyan-400 text-cyan-400" />
-              ))}
-            </div>
-          </div>
-          <p className={`${testimonial.textColor} mb-6 font-medium leading-relaxed`}>
-            {testimonial.text}
-          </p>
-          <div className="flex items-center">
-            <div className={`w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 shadow-md`}>
-              <span className={`${testimonial.textColor} font-bold text-lg`}>
-                {testimonial.avatar}
-              </span>
-            </div>
-            <div>
-              <div className={`font-bold ${testimonial.textColor} text-lg`}>
-                {testimonial.name}
-              </div>
-              <div className={`text-sm ${testimonial.textColor} opacity-75`}>
-                {testimonial.role}
+      ].map((testimonial, i) => {
+        const words = testimonial.text.split(' ');
+        const shouldTruncate = words.length > 40;
+        const truncatedText = words.slice(0, 40).join(' ');
+        const [isExpanded, setIsExpanded] = useState(false);
+        
+        return (
+          <div key={i} className={`${testimonial.bgColor} rounded-2xl p-6 shadow-lg transition-all duration-700 ${
+            testimonialsAnimation.isVisible 
+              ? `animate-rise-up-delay-${i % 3 + 1}` 
+              : 'opacity-0 translate-y-10'
+          }`}>
+            <div className="flex items-center mb-4">
+              <div className="flex">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star key={star} className="w-5 h-5 fill-cyan-400 text-cyan-400" />
+                ))}
               </div>
             </div>
+            <p className={`${testimonial.textColor} mb-6 font-medium leading-relaxed`}>
+              {isExpanded || !shouldTruncate ? testimonial.text : (
+                <>
+                  {truncatedText}
+                  <span className="text-gray-600">...</span>
+                  <button 
+                    onClick={() => setIsExpanded(true)}
+                    className="text-blue-600 hover:text-blue-800 font-semibold ml-1 cursor-pointer transition-colors duration-200"
+                  >
+                    More
+                  </button>
+                </>
+              )}
+              {isExpanded && shouldTruncate && (
+                <button 
+                  onClick={() => setIsExpanded(false)}
+                  className="text-blue-600 hover:text-blue-800 font-semibold ml-2 cursor-pointer transition-colors duration-200"
+                >
+                  Less
+                </button>
+              )}
+            </p>
+            <div className="flex items-center">
+              <div className={`w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 shadow-md`}>
+                <span className={`${testimonial.textColor} font-bold text-lg`}>
+                  {testimonial.avatar}
+                </span>
+              </div>
+              <div>
+                <div className={`font-bold ${testimonial.textColor} text-lg`}>
+                  {testimonial.name}
+                </div>
+                <div className={`text-sm ${testimonial.textColor} opacity-75`}>
+                  {testimonial.role}
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </div>
 </section>
+
 
       {/* CTA Section with rounded bottom corners and custom background */}
 <div style={{ backgroundColor: '#1B246B' }}>
