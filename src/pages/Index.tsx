@@ -547,53 +547,47 @@ const marqueeStyle = `
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {[
         {
-          text: "I recently visited Smile Dentist3 for dental treatment and had a very positive experience. The staff was incredibly professional and courteous, making me feel comfortable throughout the visit.",
-          name: "Jessy Manohar",
-          role: "Patient",
-          avatar: "JM",
-          bgColor: "bg-orange-200",
-          textColor: "text-orange-900"
-        },
-        {
-          text: "I recently got a dental crown, and I'm thoroughly impressed! The procedure was smooth, and the result is fantastic. My crown looks and feels like a natural tooth. It's comfortable, and I can eat and drink without worry.",
-          name: "Balaji Sharadha",
-          role: "Practitioner",
-          avatar: "BS",
-          bgColor: "bg-blue-200",
-          textColor: "text-blue-900"
-        },
-        {
-          text: "I've been bringing my kids to Mavis for years, and we've always had positive experiences.",
-          name: "John D.",
-          role: "Hart Patient",
-          avatar: "JD",
-          bgColor: "bg-purple-200",
-          textColor: "text-purple-900"
-        },
-        {
-          text: "I recently had a dental emergency and was in a lot of pain. Mavis got me in right away and provided prompt, effective treatment.",
-          name: "Mike L.",
-          role: "Physician",
-          avatar: "ML",
-          bgColor: "bg-yellow-200",
-          textColor: "text-yellow-900"
-        },
-        {
-          text: "I used to dread going to the dentist until I found Mavis. The team here is incredibly friendly and professional.",
-          name: "Emily W.",
-          role: "Eye Patient",
-          avatar: "EW",
-          bgColor: "bg-green-200",
-          textColor: "text-green-900"
-        },
-        {
-          text: "As someone with dental anxiety, finding a dentist I trust was challenging. Thankfully, I found Mavis.",
-          name: "Emma S.",
-          role: "Doctor",
-          avatar: "ES",
-          bgColor: "bg-pink-200",
-          textColor: "text-pink-900"
-        }
+  text: "I recently visited Smile Dentist3 for dental treatment and had a very positive experience. The staff was incredibly professional and courteous, making me feel comfortable throughout the visit.",
+  name: "Priya Reddy",
+  avatar: "PR",
+  bgColor: "bg-orange-200",
+  textColor: "text-orange-900"
+},
+{
+  text: "I recently got a dental crown, and I'm thoroughly impressed! The procedure was smooth, and the result is fantastic. My crown looks and feels like a natural tooth. It's comfortable, and I can eat and drink without worry.",
+  name: "Rajesh Kumar",
+  avatar: "RK",
+  bgColor: "bg-blue-200",
+  textColor: "text-blue-900"
+},
+{
+  text: "I've been bringing my children to this dental clinic for years, and we've always had excellent experiences. The doctors are very patient with kids and make them feel at ease.",
+  name: "Deepika Rao",
+  avatar: "DR",
+  bgColor: "bg-purple-200",
+  textColor: "text-purple-900"
+},
+{
+  text: "I recently had a dental emergency and was in severe pain. The clinic accommodated me immediately and provided prompt, effective treatment. I'm very grateful for their quick response.",
+  name: "Mohammed Ahmed",
+  avatar: "MA",
+  bgColor: "bg-yellow-200",
+  textColor: "text-yellow-900"
+},
+{
+  text: "I used to be very nervous about dental visits until I found this clinic. The team here is incredibly friendly and professional, making every visit comfortable and stress-free.",
+  name: "Midhuna Reddy",
+  avatar: "MR",
+  bgColor: "bg-green-200",
+  textColor: "text-green-900"
+},
+{
+  text: "As someone with dental anxiety, finding a trustworthy dentist was very difficult. Thankfully, I found this wonderful clinic where the doctors understand my concerns and treat me with great care.",
+  name: "Arjun Prasad",
+  avatar: "AP",
+  bgColor: "bg-pink-200",
+  textColor: "text-pink-900"
+}
       ].map((testimonial, i) => (
         <div key={i} className={`${testimonial.bgColor} rounded-2xl p-6 shadow-lg transition-all duration-700 ${
           testimonialsAnimation.isVisible 
