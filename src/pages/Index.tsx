@@ -321,117 +321,243 @@ const marqueeStyle = `
         </div>
       </section>
 <div className="bg-violet-700">
-     {/* Services Section */}
-<section ref={servicesAnimation.ref} className={`bg-accent-pink/80 py-12 md:py-20 px-1 md:px-6 rounded-b-[70px] transition-all duration-1000 ${
-  servicesAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
-}`}>
-  <div className="max-w-6xl mx-auto">
-    <div className={`text-center mb-16 transition-all duration-700 ${
-      servicesAnimation.isVisible ? 'animate-rise-up' : 'opacity-0 translate-y-10'
-    }`}>
-      <span className="text-primary font-semibold block mb-1">Our Services</span>
-      <h2 className={`text-3xl md:text-4xl font-bold text-accent-pink-foreground mb-3 transition-all duration-800 ${
-        servicesAnimation.isVisible ? 'animate-rise-up-delay-1' : 'opacity-0 translate-y-10'
+  {/* Services Section */}
+  <section ref={servicesAnimation.ref} className={`py-16 md:py-24 px-4 md:px-6 transition-all duration-1000 ${
+    servicesAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+  }`}>
+    <div className="max-w-7xl mx-auto">
+      {/* Enhanced Header */}
+      <div className={`text-center mb-20 transition-all duration-700 ${
+        servicesAnimation.isVisible ? 'animate-rise-up' : 'opacity-0 translate-y-10'
       }`}>
-        Transform Your Smile with Comprehensive Dental Services
-      </h2>
-    </div>
-    <div className="space-y-0 divide-y divide-accent-pink-foreground/10 overflow-hidden">
-      {[
-        {
-          title: "General Dentistry",
-          tags: ["Dental Cleanings", "Coloured Filing", "Tooth Extractions"],
-          link: "/services/general-dentistry",
-          image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?fit=crop&w=800&q=80",
-        },
-        {
-          title: "Preventive Dentistry",
-          tags: ["Fluoride Treatments", "Dental Sealants", "Oral Cancer Screenings"],
-          link: "/services/preventive-dentistry",
-          image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?fit=crop&w=800&q=80",
-        },
-        {
-          title: "Restorative Dentistry",
-          tags: ["Dental Crowns", "Dental Implants", "Root Canal"],
-          link: "/services/restorative-dentistry",
-          image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?fit=crop&w=800&q=80",
-        },
-        {
-          title: "Cosmetic Dentistry",
-          tags: ["Teeth Whitening", "Porcelain Veneers", "Smile Makeovers"],
-          link: "/services/cosmetic-dentistry",
-          image: "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?fit=crop&w=800&q=80",
-        },
-        {
-          title: "Periodontal Care",
-          tags: ["Scaling And Root Planing", "Periodontal Maintenance", "Gingival Grafting"],
-          link: "/services/periodontal-care",
-          image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?fit=crop&w=800&q=80",
-        },
-      ].map((service, idx) => (
-        <Link
-          to={service.link}
-          key={service.title}
-          className="group relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 px-4 sm:px-8 py-10 bg-transparent transition-all duration-300 hover:bg-transparent focus:outline-none active:bg-transparent"
-          style={{ minHeight: "120px" }}
-        >
-          {/* Overlay photo on hover and click */}
+        <span className="inline-block px-6 py-3 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-6 tracking-wide uppercase">
+          Our Services
+        </span>
+        <h2 className={`text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight transition-all duration-800 ${
+          servicesAnimation.isVisible ? 'animate-rise-up-delay-1' : 'opacity-0 translate-y-10'
+        }`}>
+          Complete Dental Care<br />
+          <span className="text-blue-600">For Your Whole Family</span>
+        </h2>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          From routine cleanings to complex procedures, we provide comprehensive dental services in a comfortable, modern environment with the latest technology.
+        </p>
+      </div>
+
+      {/* Services Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {[
+          {
+            title: "General Dentistry",
+            description: "Comprehensive oral health care including routine checkups, cleanings, and basic treatments for the whole family.",
+            tags: ["Dental Cleanings", "Coloured Fillings", "Tooth Extractions"],
+            link: "/services/general-dentistry",
+            image: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?fit=crop&w=800&q=80",
+            icon: "🦷",
+            badge: "Most Popular"
+          },
+          {
+            title: "Preventive Dentistry",
+            description: "Proactive treatments to prevent dental problems before they start, keeping your smile healthy for life.",
+            tags: ["Fluoride Treatments", "Dental Sealants", "Oral Cancer Screenings"],
+            link: "/services/preventive-dentistry",
+            image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?fit=crop&w=800&q=80",
+            icon: "🛡️",
+            badge: "Recommended"
+          },
+          {
+            title: "Restorative Dentistry",
+            description: "Advanced treatments to restore damaged teeth and rebuild your confident, functional smile.",
+            tags: ["Dental Crowns", "Dental Implants", "Root Canal"],
+            link: "/services/restorative-dentistry",
+            image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?fit=crop&w=800&q=80",
+            icon: "🔧",
+            badge: "Advanced Care"
+          },
+          {
+            title: "Cosmetic Dentistry",
+            description: "Transform your smile with our aesthetic treatments designed to enhance your confidence and appearance.",
+            tags: ["Teeth Whitening", "Porcelain Veneers", "Smile Makeovers"],
+            link: "/services/cosmetic-dentistry",
+            image: "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?fit=crop&w=800&q=80",
+            icon: "✨",
+            badge: "Transform"
+          },
+          {
+            title: "Periodontal Care",
+            description: "Specialized gum treatments to maintain healthy gums and prevent periodontal disease progression.",
+            tags: ["Scaling And Root Planing", "Periodontal Maintenance", "Gingival Grafting"],
+            link: "/services/periodontal-care",
+            image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?fit=crop&w=800&q=80",
+            icon: "🌿",
+            badge: "Specialized"
+          },
+          {
+            title: "Emergency Dentistry",
+            description: "Immediate dental care when you need it most, available for urgent dental situations and pain relief.",
+            tags: ["Pain Relief", "Emergency Repairs", "24/7 Support"],
+            link: "/services/emergency-dentistry",
+            image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?fit=crop&w=800&q=80",
+            icon: "🚨",
+            badge: "24/7 Available"
+          }
+        ].map((service, idx) => (
           <div
-            className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 group-active:opacity-100 group-hover:scale-100 group-active:scale-100 group-hover:brightness-90 group-active:brightness-90 transition-all duration-300 pointer-events-none rounded-2xl"
-            style={{
-              backgroundImage: `url(${service.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              transition: 'opacity 0.3s, filter 0.3s',
-            }}
-            aria-hidden="true"
-          ></div>
-          {/* Service Title and Tags */}
-          <div className="relative z-10 flex-1">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-4 transition-colors duration-300 group-hover:text-white group-active:text-white text-foreground">
-              {service.title}
-            </h3>
-            <div className="flex flex-wrap gap-3">
-              {service.tags.map(tag => (
-                <span
-                  key={tag}
-                  className="px-4 py-2 rounded-full border-2 border-primary/30 text-primary text-sm md:text-base font-medium backdrop-blur group-hover:border-white/50 group-hover:text-white group-active:border-white/50 group-active:text-white transition-all duration-300"
-                >
-                  {tag}
+            key={service.title}
+            className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100"
+          >
+            {/* Service Badge */}
+            <div className="absolute top-6 right-6 z-20">
+              <span className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide ${
+                service.badge === 'Most Popular' ? 'bg-orange-100 text-orange-700' :
+                service.badge === 'Recommended' ? 'bg-green-100 text-green-700' :
+                service.badge === 'Advanced Care' ? 'bg-purple-100 text-purple-700' :
+                service.badge === 'Transform' ? 'bg-pink-100 text-pink-700' :
+                service.badge === 'Specialized' ? 'bg-teal-100 text-teal-700' :
+                'bg-red-100 text-red-700'
+              }`}>
+                {service.badge}
+              </span>
+            </div>
+
+            {/* Image with Overlay */}
+            <div className="relative h-48 overflow-hidden">
+              <img 
+                src={service.image} 
+                alt={service.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+              
+              {/* Icon Overlay */}
+              <div className="absolute bottom-4 left-4">
+                <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+                  {service.icon}
+                </div>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                {service.title}
+              </h3>
+              
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {service.description}
+              </p>
+
+              {/* Service Features */}
+              <div className="space-y-3 mb-8">
+                {service.tags.map((tag, tagIdx) => (
+                  <div key={tag} className="flex items-center text-gray-700">
+                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                      <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium">{tag}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Button */}
+              <Link
+                to={service.link}
+                className="group/btn relative w-full bg-blue-600 text-white py-4 px-6 rounded-2xl font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center justify-center overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center">
+                  Learn More & Book
+                  <svg className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
                 </span>
-              ))}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left"></div>
+              </Link>
             </div>
           </div>
-          {/* Right Arrow Button */}
-          <div className="relative z-10 mt-8 sm:mt-0">
-            <span className="flex items-center justify-center border-2 border-accent-pink-foreground group-hover:border-white group-active:border-white rounded-full w-14 h-14 transition-all duration-300 group-hover:bg-white/30 group-active:bg-white/30">
-              <svg
-                className="w-7 h-7 text-accent-pink-foreground group-hover:text-white group-active:text-white transition-all duration-300"
-                fill="none" stroke="currentColor" strokeWidth="2"
-                viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round"
-                      d="M9 5l7 7-7 7"/>
+        ))}
+      </div>
+
+      {/* Trust Indicators */}
+      <div className="bg-white rounded-3xl p-8 shadow-lg mb-16">
+        <div className="text-center mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Choose Our Dental Practice?</h3>
+          <p className="text-gray-600">Trusted by thousands of patients across the region</p>
+        </div>
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-            </span>
+            </div>
+            <h4 className="font-semibold text-gray-900 mb-2">5000+ Happy Patients</h4>
+            <p className="text-sm text-gray-600">Trusted by families</p>
           </div>
-        </Link>
-      ))}
+          
+          <div className="text-center">
+            <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h4 className="font-semibold text-gray-900 mb-2">Same Day Appointments</h4>
+            <p className="text-sm text-gray-600">Quick scheduling</p>
+          </div>
+          
+          <div className="text-center">
+            <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>
+            </div>
+            <h4 className="font-semibold text-gray-900 mb-2">Award Winning</h4>
+            <p className="text-sm text-gray-600">Excellence in care</p>
+          </div>
+          
+          <div className="text-center">
+            <div className="w-16 h-16 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+            <h4 className="font-semibold text-gray-900 mb-2">Insurance Accepted</h4>
+            <p className="text-sm text-gray-600">Most plans welcome</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Enhanced CTA Section */}
+      <div className="text-center bg-gradient-to-r from-blue-600 to-blue-800 rounded-3xl p-12 text-white">
+        <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Smile?</h3>
+        <p className="text-xl mb-8 text-blue-100">Book your consultation today and discover the difference expert dental care makes.</p>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center">
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            Call Now: (555) 123-4567
+          </button>
+          
+          <button className="border-2 border-white text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 flex items-center">
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            Book Online
+          </button>
+        </div>
+        
+        <p className="text-sm text-blue-200 mt-6">
+          ✨ New patients receive a comprehensive exam and cleaning for just $99
+        </p>
+      </div>
     </div>
-    {/* View More Button */}
-    <div className="flex justify-center mt-10">
-      <button className="border-2 border-accent-pink-foreground rounded-full px-8 py-3 text-base flex items-center gap-3 bg-transparent hover:bg-white/20 focus:outline-none transition-all duration-200 text-accent-pink-foreground hover:text-white">
-        View More Services
-        <svg className="w-5 h-5"
-             fill="none" stroke="currentColor" strokeWidth="2"
-             viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round"
-                d="M13 7l5 5m0 0l-5 5m5-5H6" />
-        </svg>
-      </button>
-    </div>
-  </div>
-</section>
+  </section>
 </div>
+
 
 
 
