@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 export const useMobileServiceVisibility = (serviceCount: number) => {
-  const [visibleService, setVisibleService] = useState<number | null>(null);
+  const [visibleServices, setVisibleServices] = useState<Set<number>>(new Set());
   const [isMobile, setIsMobile] = useState(false);
   
   // Create refs for each service
@@ -31,15 +31,19 @@ export const useMobileServiceVisibility = (serviceCount: number) => {
 
       const observer = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
-            setVisibleService(index);
-          } else if (!entry.isIntersecting && visibleService === index) {
-            setVisibleService(null);
+          if (entry.isIntersecting) {
+            setVisibleServices(prev => new Set([...prev, index]));
+          } else {
+            setVisibleServices(prev => {
+              const newSet = new Set(prev);
+              newSet.delete(index);
+              return newSet;
+            });
           }
         },
         {
-          threshold: 0.6,
-          rootMargin: '0px'
+          threshold: 0.1,
+          rootMargin: '-30% 0px -10% 0px'
         }
       );
 
@@ -50,11 +54,11 @@ export const useMobileServiceVisibility = (serviceCount: number) => {
     return () => {
       observers.forEach(observer => observer.disconnect());
     };
-  }, [isMobile, visibleService]);
+  }, [isMobile]);
 
   return {
     serviceRefs: serviceRefs.current,
-    visibleService,
+    visibleServices,
     isMobile
   };
 };

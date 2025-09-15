@@ -19,7 +19,7 @@ const Index = () => {
   const ctaAnimation = useScrollAnimation();
   
   // Mobile service visibility hook
-  const { serviceRefs, visibleService, isMobile } = useMobileServiceVisibility(5);
+  const { serviceRefs, visibleServices, isMobile } = useMobileServiceVisibility(5);
   
   // Helper function to scroll to section
   const scrollToSection = (sectionId: string) => {
@@ -417,21 +417,21 @@ const marqueeStyle = `
           <div
             className={`absolute inset-0 z-0 transition-all duration-500 pointer-events-none rounded-2xl ${
               isMobile 
-                ? (visibleService === idx ? 'opacity-100 scale-100' : 'opacity-0 scale-95')
+                ? (visibleServices.has(idx) ? 'opacity-100 scale-100' : 'opacity-0 scale-95')
                 : 'opacity-0 group-hover:opacity-100 group-active:opacity-100 group-hover:scale-100 group-active:scale-100 group-hover:brightness-90 group-active:brightness-90'
             }`}
             style={{
               backgroundImage: `url(${service.image})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              filter: isMobile && visibleService === idx ? 'brightness(0.9)' : undefined,
+              filter: isMobile && visibleServices.has(idx) ? 'brightness(0.9)' : undefined,
             }}
             aria-hidden="true"
           ></div>
           {/* Service Title and Tags */}
           <div className="relative z-10 flex-1">
             <h3 className={`text-2xl md:text-3xl font-semibold mb-4 transition-colors duration-500 text-foreground ${
-              isMobile && visibleService === idx 
+              isMobile && visibleServices.has(idx) 
                 ? 'text-white' 
                 : 'group-hover:text-white group-active:text-white'
             }`}>
@@ -442,7 +442,7 @@ const marqueeStyle = `
                 <span
                   key={tag}
                   className={`px-3 py-1 bg-primary/10 text-primary rounded-full text-sm transition-colors duration-500 ${
-                    isMobile && visibleService === idx
+                    isMobile && visibleServices.has(idx)
                       ? 'bg-white/20 text-white'
                       : 'group-hover:bg-white/20 group-hover:text-white group-active:bg-white/20 group-active:text-white'
                   }`}
@@ -455,7 +455,7 @@ const marqueeStyle = `
           {/* Right Arrow Button */}
           <div className="relative z-10 mt-8 sm:mt-0">
             <div className={`w-8 h-8 flex items-center justify-center rounded-full border-2 border-primary text-primary transition-colors duration-500 ${
-              isMobile && visibleService === idx
+              isMobile && visibleServices.has(idx)
                 ? 'border-white text-white'
                 : 'group-hover:border-white group-hover:text-white group-active:border-white group-active:text-white'
             }`}>
