@@ -674,7 +674,7 @@ const marqueeStyle = `
 
 
       {/* Footer */}
-<footer id="footer" className="bg-[#1B246B] text-white py-16 px-6 rounded-t-[70px] rounded-b-[70px]">
+<footer id="footer" className="bg-[#1B246B] text-white py-16 px-6 rounded-b-[70px]">
   <div className="container mx-auto">
     <div className="grid md:grid-cols-4 gap-10">
       {/* Contact Us Column */}
