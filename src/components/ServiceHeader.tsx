@@ -56,7 +56,7 @@ const ServiceHeader = () => {
           {/* Logo with minimal padding on mobile */}
           <div className="flex items-center">
             <img
-              src="/logos.svg"
+              src="/logos.webp"
               alt="Smile Dentist3 Logo"
               className="h-8 md:h-10 w-auto"
             />
