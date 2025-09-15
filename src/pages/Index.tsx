@@ -322,11 +322,11 @@ const marqueeStyle = `
       </section>
 <div className="bg-violet-700">
      {/* Services Section */}
-<section ref={servicesAnimation.ref} className={`bg-accent-pink py-12 md:py-20 px-1 md:px-6 rounded-b-[70px] transition-all duration-1000 ${
+<section ref={servicesAnimation.ref} className={`bg-accent-pink/80 py-12 md:py-20 px-1 md:px-6 rounded-b-[70px] transition-all duration-1000 ${
   servicesAnimation.isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
 }`}>
   <div className="max-w-6xl mx-auto">
-    <div className={`text-center mb-10 transition-all duration-700 ${
+    <div className={`text-center mb-16 transition-all duration-700 ${
       servicesAnimation.isVisible ? 'animate-rise-up' : 'opacity-0 translate-y-10'
     }`}>
       <span className="text-primary font-semibold block mb-1">Our Services</span>
@@ -372,8 +372,8 @@ const marqueeStyle = `
         <Link
           to={service.link}
           key={service.title}
-          className="group relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-4 sm:px-8 py-8 bg-transparent transition-all duration-300 hover:bg-transparent focus:outline-none active:bg-transparent"
-          style={{ minHeight: "90px" }}
+          className="group relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 px-4 sm:px-8 py-10 bg-transparent transition-all duration-300 hover:bg-transparent focus:outline-none active:bg-transparent"
+          style={{ minHeight: "120px" }}
         >
           {/* Overlay photo on hover and click */}
           <div
@@ -388,14 +388,14 @@ const marqueeStyle = `
           ></div>
           {/* Service Title and Tags */}
           <div className="relative z-10 flex-1">
-            <h3 className="text-lg md:text-xl font-semibold mb-3 transition-colors duration-300 group-hover:text-white group-active:text-white text-foreground">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-4 transition-colors duration-300 group-hover:text-white group-active:text-white text-foreground">
               {service.title}
             </h3>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-3">
               {service.tags.map(tag => (
                 <span
                   key={tag}
-                  className="px-3 py-1 rounded-full border-2 border-primary/30 text-primary text-xs md:text-sm font-medium backdrop-blur group-hover:border-white/50 group-hover:text-white group-active:border-white/50 group-active:text-white transition-all duration-300"
+                  className="px-4 py-2 rounded-full border-2 border-primary/30 text-primary text-sm md:text-base font-medium backdrop-blur group-hover:border-white/50 group-hover:text-white group-active:border-white/50 group-active:text-white transition-all duration-300"
                 >
                   {tag}
                 </span>
@@ -403,10 +403,10 @@ const marqueeStyle = `
             </div>
           </div>
           {/* Right Arrow Button */}
-          <div className="relative z-10 mt-6 sm:mt-0">
-            <span className="flex items-center justify-center border-2 border-accent-pink-foreground group-hover:border-white group-active:border-white rounded-full w-12 h-12 transition-all duration-300 group-hover:bg-white/30 group-active:bg-white/30">
+          <div className="relative z-10 mt-8 sm:mt-0">
+            <span className="flex items-center justify-center border-2 border-accent-pink-foreground group-hover:border-white group-active:border-white rounded-full w-14 h-14 transition-all duration-300 group-hover:bg-white/30 group-active:bg-white/30">
               <svg
-                className="w-6 h-6 text-accent-pink-foreground group-hover:text-white group-active:text-white transition-all duration-300"
+                className="w-7 h-7 text-accent-pink-foreground group-hover:text-white group-active:text-white transition-all duration-300"
                 fill="none" stroke="currentColor" strokeWidth="2"
                 viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round"
@@ -432,6 +432,7 @@ const marqueeStyle = `
   </div>
 </section>
 </div>
+
 
 
       
