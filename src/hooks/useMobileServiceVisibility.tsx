@@ -43,7 +43,7 @@ export const useMobileServiceVisibility = (serviceCount: number) => {
         },
         {
           threshold: 0.1,
-          rootMargin: '-30% 0px -10% 0px'
+          rootMargin: '-50% 0px -10% 0px'
         }
       );
 
