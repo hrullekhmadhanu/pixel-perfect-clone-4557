@@ -330,11 +330,17 @@ const marqueeStyle = `
       servicesAnimation.isVisible ? 'animate-rise-up' : 'opacity-0 translate-y-10'
     }`}>
       <span className="text-primary font-semibold block mb-1">Our Services</span>
-      <h2 className={`text-3xl md:text-4xl font-bold text-accent-pink-foreground mb-3 transition-all duration-800 ${
-        servicesAnimation.isVisible ? 'animate-rise-up-delay-1' : 'opacity-0 translate-y-10'
-      }`}>
-        Transform Your Smile with Comprehensive Dental Services
-      </h2>
+      <h2 className={`text-3xl md:text-4xl font-bold text-accent-pink-foreground mb-3 transition-all duration-800 flex items-center justify-center gap-3 ${
+  servicesAnimation.isVisible ? 'animate-rise-up-delay-1' : 'opacity-0 translate-y-10'
+}`}>
+  <img 
+    src="/favicon.ico" 
+    alt="Dental Icon" 
+    className="w-8 h-8 md:w-10 md:h-10 animate-wobble"
+  />
+  Transform Your Smile with Comprehensive Dental Services
+</h2>
+
     </div>
     <div className="space-y-0 divide-y divide-accent-pink-foreground/10 overflow-hidden">
       {[
