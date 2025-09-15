@@ -395,7 +395,12 @@ const marqueeStyle = `
               {service.tags.map(tag => (
                 <span
                   key={tag}
-                  className="px-4 py-2 rounded-full border border-primary/30 text-primary text-xs md:text-sm font-normal backdrop-blur group-hover:border-white/50 group-hover:text-white group-active:border-white/50 group-active:text-white transition-all duration-300"
+                  className="px-4 py-2 rounded-full border text-xs md:text-sm font-normal backdrop-blur group-hover:border-white/50 group-hover:text-white group-active:border-white/50 group-active:text-white transition-all duration-300"
+style={{
+  color: '#87344e',
+  borderColor: '#87344e'
+}}
+
 
                 >
                   {tag}
